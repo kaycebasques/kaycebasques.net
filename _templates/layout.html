@@ -1,0 +1,19 @@
+{% extends "!layout.html" %}
+
+{% block relbar1 %}
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>{{ _('Navigation') }}</h3>
+      <ul>
+        {%- block rootrellink %}
+        <li class="nav-item nav-item-0"><a href="{{ pathto(root_doc)|e }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
+        {%- endblock %}
+        {%- for parent in parents %}
+          <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+        {%- endfor %}
+        <li class="nav-item nav-item-this"><a href="{{ link|e }}">{{ title }}</a></li>
+        {%- block relbaritems %} {% endblock %}
+      </ul>
+    </div>
+{% endblock %}
+
+{% block relbar2 %}{% endblock %}

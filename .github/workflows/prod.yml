@@ -1,0 +1,36 @@
+name: prod
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: configure
+        uses: actions/configure-pages@v5
+      - name: build
+        run: |
+          cd ${{github.workspace}}
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv venv --python 3.12.12 venv
+          . venv/bin/activate
+          uv pip install -r prod.txt
+          sphinx-build -b html . out
+          deactivate
+      - name: upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{github.workspace}}/out
+      - name: deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
