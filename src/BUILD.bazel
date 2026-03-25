@@ -2,7 +2,7 @@ load("@rules_python//sphinxdocs:sphinx.bzl", "sphinx_build_binary", "sphinx_docs
 load("@rules_python//sphinxdocs:sphinx_docs_library.bzl", "sphinx_docs_library")
 
 sphinx_docs_library(
-    name = "sources",
+    name = "srcs",
     srcs = [
         "2026/03/overlines/index.rst",
         "index.rst",
@@ -25,16 +25,16 @@ sphinx_docs(
     sphinx = ":sphinx",
     strip_prefix = "src/",
     deps = [
-        ":sources",
+        ":srcs",
     ]
 )
 
 alias(
-    name = "ls",
+    name = "sources",
     actual = "//src:_src/_sources",
 )
 
 alias(
-    name = "run",
+    name = "server",
     actual = "//src:src.serve",
 )
