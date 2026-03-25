@@ -1,19 +1,17 @@
 # General
-project = "kayce.dev"
+project = "kaycebasques.net"
 release = "0.0.0"
 author = "Kayce Basques"
 copyright = f"2026, {author}"
 exclude_patterns = [
-    ".github",
-    ".gitignore",
-    "dev.fish",
-    "dev.txt",
-    "out",
-    "venv"
+    "*bazel*",
+    ".git*",
+    "pypi.*",
+    "README.md"
 ]
 templates_path = ['_templates']
 
-# HTMl
+# HTML
 html_theme = 'basic'
 html_permalinks_icon = "§"
-html_short_title = 'kayce.dev'
+html_short_title = 'kaycebasques.net'
