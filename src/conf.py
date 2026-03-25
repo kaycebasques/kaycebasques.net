@@ -3,12 +3,7 @@ project = "kaycebasques.net"
 release = "0.0.0"
 author = "Kayce Basques"
 copyright = f"2026, {author}"
-exclude_patterns = [
-    "*bazel*",
-    ".git*",
-    "pypi.*",
-    "README.md"
-]
+exclude_patterns = ["BUILD.bazel"]
 templates_path = ['_templates']
 
 # HTML

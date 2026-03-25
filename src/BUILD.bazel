@@ -16,13 +16,19 @@ sphinx_build_binary(
 )
 
 sphinx_docs(
-    name = "docs",
+    name = "src",
     config = "conf.py",
     formats = [
         "html",
     ],
     sphinx = ":sphinx",
+    strip_prefix = "src/",
     deps = [
         ":sources",
     ]
+)
+
+alias(
+    name = "ls",
+    actual = "//src:_src/_sources",
 )
