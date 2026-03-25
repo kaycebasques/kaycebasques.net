@@ -30,13 +30,3 @@ sphinx_docs(
         ":srcs",
     ]
 )
-
-alias(
-    name = "sources",
-    actual = "//src:_src/_sources",
-)
-
-alias(
-    name = "server",
-    actual = "//src:src.serve",
-)
