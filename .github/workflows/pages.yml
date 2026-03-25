@@ -21,7 +21,7 @@ jobs:
       - name: build
         run: |
           cd ${{github.workspace}}
-          ./bazelisk/linux/amd64 build //docs
+          ./bazelisk/linux/amd64 build //src
       - name: upload
         uses: actions/upload-pages-artifact@v3
         with:
