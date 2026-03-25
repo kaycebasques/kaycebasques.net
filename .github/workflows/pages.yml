@@ -1,4 +1,4 @@
-name: prod
+name: pages
 on:
   push:
     branches: ['main']
@@ -21,16 +21,11 @@ jobs:
       - name: build
         run: |
           cd ${{github.workspace}}
-          curl -LsSf https://astral.sh/uv/install.sh | sh
-          uv venv --python 3.12.12 venv
-          . venv/bin/activate
-          uv pip install -r prod.txt
-          sphinx-build -b html . out
-          deactivate
+          ./bazelisk/linux/amd64 build //docs
       - name: upload
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{github.workspace}}/out
+          path: ${{github.workspace}}/bazel-bin/src/_build/html
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
