@@ -1,6 +1,6 @@
 ---
 name: projects
-description: Invoke this skill when interacting with anyfile in the //.agents/projects directory
+description: Workflows for handling PROJECT.md files, especially when referenced as @.agents/projects/**/PROJECT.md.
 ---
 
 the user will explain the project in PROJECT.md.
@@ -9,4 +9,5 @@ they mean the directory containing PROJECT.md.
 
 output your plan as PLAN.md in the project directory
 
-ask the user to review the plan
+ask the user to review the plan before you
+implement anything

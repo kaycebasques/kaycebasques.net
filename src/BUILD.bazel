@@ -4,6 +4,7 @@ load("@rules_python//sphinxdocs:sphinx_docs_library.bzl", "sphinx_docs_library")
 sphinx_docs_library(
     name = "srcs",
     srcs = [
+        "2026/04/tapestry/index.rst",
         "2026/03/delete/index.rst",
         "2026/03/overlines/index.rst",
 	"2026/03/rotation/index.rst",
