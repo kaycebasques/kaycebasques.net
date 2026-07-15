@@ -18,21 +18,16 @@ sphinx_docs_library(
 
 sphinx_build_binary(
     name = "sphinx",
-    deps = [
-        "@pypi//sphinx",
-    ]
+    deps = ["@pypi//sphinx"]
 )
 
 sphinx_docs(
     name = "src",
     config = "conf.py",
-    formats = [
-        "html",
-    ],
+    formats = ["html"],
     sphinx = ":sphinx",
     strip_prefix = "src/",
     visibility = ["//visibility:public"],
-    deps = [
-        ":srcs",
-    ]
+    deps = [":srcs"],
+    extra_opts = ["--fail-on-warning"],
 )
