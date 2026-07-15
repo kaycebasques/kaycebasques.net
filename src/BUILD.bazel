@@ -7,8 +7,12 @@ sphinx_docs_library(
         "2026/04/tapestry/index.rst",
         "2026/03/delete/index.rst",
         "2026/03/overlines/index.rst",
-	"2026/03/rotation/index.rst",
+        "2026/03/rotation/index.rst",
         "index.rst",
+    ],
+    deps = [
+        "//src/2026/07/elm:elm_docs",
+        "//src/2026/07/elm:elm_static",
     ],
 )
 
@@ -27,6 +31,7 @@ sphinx_docs(
     ],
     sphinx = ":sphinx",
     strip_prefix = "src/",
+    visibility = ["//visibility:public"],
     deps = [
         ":srcs",
     ]

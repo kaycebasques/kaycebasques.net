@@ -1,0 +1,36 @@
+load("@rules_elm//elm:defs.bzl", "elm_binary")
+load("@rules_python//sphinxdocs:sphinx_docs_library.bzl", "sphinx_docs_library")
+
+elm_binary(
+    name = "main_js",
+    main = "src/Main.elm",
+    deps = [
+        "@elm_package_elm_core",
+        "@elm_package_elm_html",
+        "@elm_package_elm_browser",
+        "@elm_package_elm_virtual_dom",
+        "@elm_package_elm_json",
+        "@elm_package_elm_time",
+        "@elm_package_elm_url",
+    ],
+    visibility = ["//visibility:private"],
+)
+
+sphinx_docs_library(
+    name = "elm_docs",
+    srcs = [
+        "index.rst",
+    ],
+    prefix = "2026/07/elm/",
+    visibility = ["//src:__pkg__"],
+)
+
+sphinx_docs_library(
+    name = "elm_static",
+    srcs = [
+        ":main_js",
+    ],
+    prefix = "extra/2026/07/elm/",
+    visibility = ["//src:__pkg__"],
+)
+
