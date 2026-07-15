@@ -1,6 +1,6 @@
-=================================================================
-Quickly create reStructuredText overlines (and underlines) in Vim
-=================================================================
+============================================
+Vim shortcut for reStructuredText underlines
+============================================
 
 I format H1-level section titles in reStructuredText with an overline
 and underline, like this:
