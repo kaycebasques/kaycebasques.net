@@ -1,0 +1,10 @@
+load("@rules_python//sphinxdocs:sphinx_docs_library.bzl", "sphinx_docs_library")
+
+sphinx_docs_library(
+    name = "math",
+    srcs = [
+        "index.rst",
+        "linalg/bookmarks.rst",
+    ],
+    visibility = ["//visibility:public"],
+)

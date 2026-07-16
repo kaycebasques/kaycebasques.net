@@ -1,0 +1,7 @@
+====
+Math
+====
+
+.. toctree::
+
+   linalg/bookmarks

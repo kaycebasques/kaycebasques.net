@@ -13,7 +13,7 @@ elm_binary(
         "@elm_package_elm_time",
         "@elm_package_elm_url",
     ],
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
 )
 
 sphinx_docs_library(
@@ -22,7 +22,7 @@ sphinx_docs_library(
         "index.rst",
     ],
     prefix = "2026/07/elm/",
-    visibility = ["//src:__pkg__"],
+    visibility = ["//visibility:public"],
 )
 
 sphinx_docs_library(
@@ -31,6 +31,6 @@ sphinx_docs_library(
         ":main_js",
     ],
     prefix = "extra/2026/07/elm/",
-    visibility = ["//src:__pkg__"],
+    visibility = ["//visibility:public"],
 )
 
