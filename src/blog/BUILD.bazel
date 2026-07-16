@@ -9,6 +9,7 @@ sphinx_docs_library(
         "2026/04/tapestry/index.rst",
         "index.rst",
     ],
+    prefix = "blog/",
     deps = [
         "//src/blog/2026/07/elm:elm_docs",
         "//src/blog/2026/07/elm:elm_static",

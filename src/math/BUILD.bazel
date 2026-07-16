@@ -6,5 +6,6 @@ sphinx_docs_library(
         "index.rst",
         "linalg/bookmarks.rst",
     ],
+    prefix = "math/",
     visibility = ["//visibility:public"],
 )

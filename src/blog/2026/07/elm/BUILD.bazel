@@ -21,7 +21,7 @@ sphinx_docs_library(
     srcs = [
         "index.rst",
     ],
-    prefix = "2026/07/elm/",
+    prefix = "blog/2026/07/elm/",
     visibility = ["//visibility:public"],
 )
 
@@ -30,7 +30,7 @@ sphinx_docs_library(
     srcs = [
         ":main_js",
     ],
-    prefix = "extra/2026/07/elm/",
+    prefix = "extra/blog/2026/07/elm/",
     visibility = ["//visibility:public"],
 )
 

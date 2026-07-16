@@ -1,16 +1,16 @@
 load("@rules_python//sphinxdocs:sphinx.bzl", "sphinx_build_binary", "sphinx_docs")
 load("@rules_python//sphinxdocs:sphinx_docs_library.bzl", "sphinx_docs_library")
 
+package(default_visibility = ["//visibility:public"])
+
 sphinx_docs_library(
     name = "srcs",
     srcs = [
         "index.rst",
-        "//src/blog",
-        "//src/math",
     ],
     deps = [
-        "//src/blog/2026/07/elm:elm_docs",
-        "//src/blog/2026/07/elm:elm_static",
+        "//src/blog",
+        "//src/math",
     ],
 )
 
