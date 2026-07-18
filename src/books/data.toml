@@ -1,0 +1,3034 @@
+[9786057462220]
+title = "1984"
+authors = ["George Orwell"]
+
+[9786057462220.a]
+progress = 100
+rating = 8
+
+[9782290308141]
+title = "2001"
+authors = ["Arthur C. Clarke"]
+
+[9782290308141.20251001]
+end = "20251015"
+progress = 100
+rating = 7
+notes = """
+Some details from the movie are more clear now that I've read the book. In general it makes me appreciate the movie more. Kubrick found some cool ideas and really breathed life into them. The movie was for sure better than the book.
+"""
+
+[9781615194940]
+title = "A Brief History Of Everyone Who Ever Lived"
+authors = ["Adam Rutherford"]
+
+[9781615194940.20250723]
+progress = 50
+rating = 7
+notes = """
+I enjoyed the book a lot at the start but it couldn't keep my attention. Maybe I should revisit when I have more time and energy to read.
+"""
+
+[0553380168]
+title = "A Brief History Of Time"
+authors = ["Stephen Hawking"]
+
+[0553380168.20241219]
+end = "20250102"
+progress = 100
+rating = 8
+
+[9780345256324]
+title = "A Clockwork Orange"
+authors = ["Anthony Burgess"]
+
+[9780345256324.a]
+progress = 100
+rating = 8
+
+[9780521178723]
+title = "A Concise History of Japan"
+authors = ["Brett Walker"]
+
+[9780521178723.a]
+end = "20240425"
+progress = 100
+rating = 8
+
+[1857988515]
+title = "A Deepness in the Sky"
+authors = ["Vernor Vinge"]
+
+[1857988515.a]
+end = "20130722"
+progress = 100
+rating = 8
+
+[9782221125779]
+title = "A Fire Upon the Deep"
+authors = ["Vernor Vinge"]
+
+[9782221125779.a]
+end = "20121216"
+progress = 100
+rating = 10
+
+[9781852864781]
+title = "A Game of You"
+authors = ["Neil Gaiman"]
+
+[9781852864781.a]
+end = "20141217"
+progress = 100
+rating = 8
+
+[9789724617275]
+title = "A Long Way Gone"
+authors = ["Ishmael Beah"]
+
+[9789724617275.a]
+progress = 100
+rating = 8
+
+[9780142002780]
+title = "A Matter of Degrees"
+authors = ["Gino Segrè"]
+
+[9780142002780.a]
+end = "20210904"
+progress = 100
+rating = 6
+
+[9781250186447]
+title = "A Memory Called Empire"
+authors = ["Arkady Martine"]
+
+[9781250186447.20260511]
+end = "20260611"
+rating = 8
+progress = 100
+
+[9781429513609]
+title = "A New Earth"
+authors = ["Eckhart Tolle"]
+
+[9781429513609.a]
+end = "20150807"
+progress = 100
+rating = 8
+
+[9780694522033]
+title = "A People's History of the United States"
+authors = ["Howard Zinn"]
+
+[9780694522033.a]
+progress = 100
+rating = 6
+
+[9781532350740]
+title = "A Place To Bury Strangers"
+authors = ["Justin Kerr"]
+
+[9781532350740.20241218]
+end = "20241220"
+progress = 100
+rating = 7
+
+[9780517152935]
+title = "A Short History of Financial Euphoria"
+authors = ["John Kenneth Galbraith"]
+
+[9780517152935.a]
+end = "20200410"
+progress = 100
+rating = 10
+
+[9781668009291]
+title = "A Template for Understanding Big Debt Crises"
+authors = ["Ray Dalio"]
+
+[9781668009291.a]
+end = "20190418"
+progress = 100
+rating = 8
+
+[9780321958310]
+title = "A Tour of C++"
+authors = ["Bjarne Stroustrup"]
+
+[9780321958310.a]
+end = "20221021"
+progress = 100
+rating = 6
+
+[9780486604893]
+title = "About Vectors"
+authors = ["Banesh Hoffman"]
+
+[9780486604893.20251007]
+end = "20251026"
+progress = 40
+notes = """
+The book is focused on pure mathematical theory of vectors. I'm looking for detailed explanations of applications. A lot of the theory was too advanced for me.
+"""
+
+[9780691135144]
+title = "Adaptive Markets"
+authors = ["Andrew W. Lo"]
+
+[9780691135144.a]
+end = "20180707"
+progress = 100
+rating = 8
+
+[9780333640494]
+title = "Alice’s Adventures in Wonderland / Through the Looking-Glass"
+authors = ["Lewis Carroll"]
+
+[9780333640494.a]
+progress = 100
+rating = 10
+
+[9780765397539]
+title = "All Systems Red"
+authors = ["Martha Wells"]
+
+[9780765397539.20241216]
+end = "20241218"
+progress = 100
+rating = 10
+
+[9780062572233]
+title = "American Gods"
+authors = ["Neil Gaiman"]
+
+[9780062572233.a]
+end = "20170911"
+progress = 100
+rating = 10
+
+[9780061694943]
+title = "Anathem"
+authors = ["Neal Stephenson"]
+
+[9780061694943.20250105]
+end = "20250202"
+progress = 100
+rating = 8
+notes = """
+Interesting ideas. Coherent worldbuilding. I liked the vibe of the book a lot. It did not need to be 900 pages, though. The epic nature of the adventure was somewhat (but not completely) satisfying.
+"""
+
+[9782290111437]
+title = "Ancillary Justice"
+authors = ["Ann Leckie"]
+
+[9782290111437.20250725]
+end = "20250824"
+progress = 100
+rating = 8
+notes = """
+Cool ideas! Main character and writing were rather boring.
+"""
+
+[9798752525964]
+title = "Animal Farm"
+authors = ["George Orwell"]
+
+[9798752525964.a]
+progress = 100
+rating = 6
+
+[9780374104092]
+title = "Annihilation"
+authors = ["Jeff VanderMeer"]
+
+[9780374104092.20241226]
+end = "20241228"
+progress = 100
+rating = 7
+notes = """
+The story was engaging. The overall tone was too moody and serious for my tastes. There are some thoughtful and interesting ideas about civilization, psychology, and biology.
+"""
+
+[9780679645276]
+title = "Antifragile"
+authors = ["Nassim Nicholas Taleb"]
+
+[9780679645276.a]
+end = "20190224"
+progress = 100
+rating = 10
+
+[9788833893273]
+title = "Are Prisons Obsolete?"
+authors = ["Angela Y. Davis"]
+
+[9788833893273.a]
+end = "20200930"
+progress = 100
+rating = 8
+
+[9780792365877]
+title = "Astrobiology"
+authors = ["David C. Catling"]
+
+[9780792365877.a]
+end = "20230828"
+progress = 100
+rating = 10
+
+[9781705309902]
+title = "Beej's Guide to C Programming"
+authors = ["Brian Hall"]
+
+[9781705309902.a]
+end = "20230530"
+progress = 100
+rating = 8
+
+[9780941533096]
+title = "Beer in the Snooker Club"
+authors = ["Waguih Ghali"]
+
+[9780941533096.a]
+progress = 100
+rating = 4
+
+[9780198833871]
+title = "Biochemistry"
+authors = ["Mark Lorch"]
+
+[9780198833871.a]
+end = "20231020"
+progress = 100
+rating = 8
+
+[9780898459173]
+title = "Black Boy"
+authors = ["Richard Wright"]
+
+[9780898459173.a]
+progress = 100
+rating = 8
+
+[9780199602667]
+title = "Black Holes"
+authors = ["Katherine Blundell"]
+
+[9780199602667.a]
+end = "20240109"
+progress = 100
+rating = 8
+
+[9780470279199]
+title = "Bond Investing for Dummies"
+authors = ["Russell Wild"]
+
+[9780470279199.a]
+end = "20141014"
+progress = 100
+rating = 6
+
+[9781521308578]
+title = "Brave New World"
+authors = ["Aldous Huxley"]
+
+[9781521308578.a]
+progress = 100
+rating = 8
+
+[9780374280499]
+title = "Brazil"
+authors = ["Lilia Moritz Schwarcz"]
+
+[9780374280499.a]
+end = "20210222"
+progress = 100
+rating = 6
+
+[9782809401042]
+title = "Brief Lives"
+authors = ["Neil Gaiman"]
+
+[9782809401042.a]
+progress = 100
+rating = 10
+
+[9781593278885]
+title = "C++ Crash Course"
+authors = ["Josh Lospinoso"]
+
+[9781593278885.20250519]
+end = "20250719"
+progress = 100
+rating = 9
+notes = """
+First half is a very effective primer for people who are already familiar with other programming languages. Second half discusses various common topics using the standard library. Wasn't as effective as the first half but was still quite helpful.
+"""
+
+[8535903666]
+title = "Carnaval no fogo"
+authors = ["Ruy Castro"]
+
+[8535903666.20260103]
+
+[9780774032551]
+title = "Catch-22"
+authors = ["Joseph Heller"]
+
+[9780774032551.a]
+progress = 100
+rating = 6
+
+[9780999136744]
+title = "Central Banking 101"
+authors = ["Joseph J. Wang"]
+
+[9780999136744.a]
+end = "20230108"
+progress = 100
+rating = 10
+
+[9780812922189]
+title = "Changing Fortunes"
+authors = ["Paul A. Volcker"]
+
+[9780812922189.a]
+end = "20230412"
+progress = 100
+rating = 8
+
+[9780199683970]
+title = "Chemistry"
+authors = ["Peter Atkins"]
+
+[9780199683970.a]
+end = "20240223"
+progress = 100
+rating = 10
+
+[9781559275750]
+title = "Children of the Mind"
+authors = ["Orson Scott Card"]
+
+[9781559275750.a]
+progress = 100
+rating = 6
+
+[9781108478601]
+title = "China's Gilded Age"
+authors = ["Yuen Yuen Ang"]
+
+[9781108478601.a]
+end = "20220904"
+progress = 100
+rating = 8
+
+[9781398504127]
+title = "Chip War"
+authors = ["Chris   Miller"]
+
+[9781398504127.a]
+end = "20231217"
+progress = 100
+rating = 10
+
+[9780370315508]
+title = "Civil War"
+authors = ["Geoffrey C. Ward"]
+
+[9780370315508.a]
+progress = 100
+rating = 10
+
+[9781614279846]
+title = "Civilization and Its Discontents"
+authors = ["Sigmund Freud"]
+
+[9781614279846.a]
+progress = 100
+rating = 8
+
+[9780198867869]
+title = "Climate Change"
+authors = ["Mark Maslin"]
+
+[9780198867869.a]
+end = "20161112"
+progress = 100
+rating = 8
+
+[9781605095295]
+title = "Confessions of an Economic Hit Man"
+authors = ["John Perkins"]
+
+[9781605095295.a]
+progress = 100
+rating = 6
+
+[9781648411205]
+title = "Consensuality"
+authors = ["Helen Windfell"]
+
+[9781648411205.a]
+end = "20200221"
+progress = 100
+rating = 6
+
+[9781527209183]
+title = "Content Design"
+authors = ["Sarah Richards"]
+
+[9781527209183.a]
+end = "20230502"
+progress = 100
+rating = 6
+
+[9780140449136]
+title = "Crime and Punishment"
+authors = ["Fyodor Dostoevsky"]
+
+[9780140449136.a]
+end = "20120127"
+progress = 100
+rating = 10
+
+[9781473562523]
+title = "Dare to Lead"
+authors = ["Brené Brown"]
+
+[9781473562523.a]
+end = "20220322"
+progress = 100
+rating = 6
+
+[9780765386632]
+title = "Death's End"
+authors = ["Liu Cixin"]
+
+[9780765386632.a]
+end = "20231228"
+progress = 100
+rating = 10
+
+[9783868816570]
+title = "Deep Work"
+authors = ["Cal Newport"]
+
+[9783868816570.a]
+end = "20190305"
+progress = 100
+rating = 8
+
+[9780674055445]
+title = "Deng Xiaoping And The Transformation Of China"
+authors = ["Ezra E. Vogel"]
+
+[9780674055445.20250402]
+end = "20250702"
+progress = 100
+rating = 9
+notes = """
+A bit long, but I learned a lot. Deng was an amazing leader.
+"""
+
+[9781250800350]
+title = "Desert Oracle Volume 1"
+authors = ["Ken Layne"]
+
+[9781250800350.20241201]
+end = "20241220"
+progress = 100
+rating = 9
+
+[9780134211527]
+title = "Design for How People Learn"
+authors = ["Julie Dirksen"]
+
+[9780134211527.a]
+end = "20230510"
+progress = 100
+rating = 8
+
+[9780140551976]
+title = "Discipline and Punish"
+authors = ["Michel Foucault"]
+
+[9780140551976.a]
+end = "20200329"
+progress = 100
+rating = 10
+
+[9783596905591]
+title = "Do Androids Dream of Electric Sheep?"
+authors = ["Philip K. Dick"]
+
+[9783596905591.a]
+progress = 100
+rating = 8
+
+[9781484272176]
+title = "Docs for Developers"
+authors = ["Jared Bhatti"]
+
+[9781484272176.a]
+end = "20220228"
+progress = 100
+rating = 8
+
+[9781387531493]
+title = "Docs Like Code"
+authors = ["Anne Gentle"]
+
+[9781387531493.a]
+end = "20230920"
+progress = 100
+rating = 6
+
+[9781302907631]
+title = "Doctor Aphra and the Enormous Profit"
+authors = ["Kieron Gillen"]
+
+[9781302907631.a]
+progress = 100
+rating = 8
+
+[9798551926917]
+title = "Down and Out in Paris and London"
+authors = ["George Orwell"]
+
+[9798551926917.a]
+progress = 100
+rating = 6
+
+[9788467491357]
+title = "Dream Country"
+authors = ["Neil Gaiman"]
+
+[9788467491357.a]
+progress = 100
+rating = 8
+
+[9780192802156]
+title = "Dreaming"
+authors = ["J. Allan Hobson"]
+
+[9780192802156.a]
+end = "20230811"
+progress = 100
+rating = 10
+
+[9781435140745]
+title = "Dune"
+authors = ["Frank Herbert"]
+
+[9781435140745.a]
+end = "20220518"
+progress = 100
+rating = 10
+
+[9780593201732]
+title = "Dune Messiah"
+authors = ["Frank Herbert"]
+
+[9780593201732.a]
+progress = 100
+rating = 6
+
+[9780785199786]
+title = "End of Games"
+authors = ["Kieron Gillen"]
+
+[9780785199786.a]
+progress = 100
+rating = 8
+
+[9780812565690]
+title = "Ender's Shadow"
+authors = ["Orson Scott Card"]
+
+[9780812565690.a]
+progress = 100
+rating = 10
+
+[9780812532531]
+title = "Ender’s Game"
+authors = ["Orson Scott Card"]
+
+[9780812532531.a]
+progress = 100
+rating = 10
+
+[9780262338318]
+title = "Energy and Civilization"
+authors = ["Vaclav Smil"]
+
+[9780262338318.a]
+end = "20211009"
+progress = 100
+rating = 8
+
+[9780199578696]
+title = "Engineering"
+authors = ["David Blockley"]
+
+[9780199578696.a]
+end = "20240122"
+progress = 100
+rating = 6
+
+[9781473554689]
+title = "Entangled Life"
+authors = ["Merlin Sheldrake"]
+
+[9781473554689.a]
+end = "20211231"
+progress = 100
+rating = 10
+
+[9781937434281]
+title = "Every Page Is Page One"
+authors = ["Mark Baker"]
+
+[9781937434281.a]
+end = "20230920"
+progress = 100
+rating = 10
+
+[9786057762030]
+title = "Fables & Reflections"
+authors = ["Neil Gaiman"]
+
+[9786057762030.a]
+progress = 100
+rating = 8
+
+[1400118182]
+title = "Fahrenheit 451"
+authors = ["Ray Bradbury"]
+
+[1400118182.a]
+progress = 100
+rating = 10
+
+[9780300189698]
+title = "Faust"
+authors = ["Johann Wolfgang von Goethe"]
+
+[9780300189698.a]
+end = "20171226"
+progress = 100
+rating = 8
+
+[9789861737393]
+title = "Fight Club"
+authors = ["Chuck Palahniuk"]
+
+[9789861737393.a]
+progress = 100
+rating = 4
+
+[0262293889]
+title = "Fighting Traffic"
+authors = ["Peter D. Norton"]
+
+[0262293889.a]
+progress = 100
+rating = 8
+
+[9781465419507]
+title = "First Aid Manual"
+authors = ["Gina M. Piazza"]
+
+[9781465419507.a]
+end = "20211226"
+progress = 100
+rating = 8
+
+[9787894000750]
+title = "Flow My Tears, the Policeman Said"
+authors = ["Philip K. Dick"]
+
+[9787894000750.a]
+progress = 100
+rating = 6
+
+[9781302910570]
+title = "Fortress Vader"
+authors = ["Charles Soule"]
+
+[9781302910570.a]
+progress = 100
+rating = 10
+
+[9780380231683]
+title = "Foundation"
+authors = ["Isaac Asimov"]
+
+[9780380231683.a]
+end = "20200314"
+progress = 100
+rating = 8
+
+[9786053757740]
+title = "Foundation and Empire"
+authors = ["Isaac Asimov"]
+
+[9786053757740.a]
+progress = 100
+rating = 8
+
+[9789870407843]
+title = "Frankenstein"
+authors = ["Mary Wollstonecraft Shelley"]
+
+[9789870407843.a]
+end = "20141202"
+progress = 100
+rating = 6
+
+[9781394159703]
+title = "Fundamental Analysis for Dummies"
+authors = ["Matthew Krantz"]
+
+[9781394159703.a]
+end = "20141202"
+progress = 100
+rating = 6
+
+[9780735223905]
+title = "Fundamentals"
+authors = ["Frank Wilczek"]
+
+[9780735223905.20240703]
+end = "20240722"
+progress = 100
+rating = 9
+
+[9780199688784]
+title = "Fungi"
+authors = ["Nicholas P. Money"]
+
+[9780199688784.a]
+end = "20190427"
+progress = 100
+rating = 6
+
+[9780345282477]
+title = "Gateway"
+authors = ["Frederik Pohl"]
+
+[9780345282477.a]
+end = "20140209"
+progress = 100
+rating = 6
+
+[9780192856708]
+title = "Genes"
+authors = ["Jonathan M.W. Slack"]
+
+[9780192856708.a]
+end = "20230907"
+progress = 100
+rating = 8
+
+[9781119740223]
+title = "Geopolitical Alpha"
+authors = ["Marko Papić"]
+
+[9781119740223.a]
+end = "20211206"
+progress = 100
+rating = 10
+
+[9781590771785]
+title = "Getting to Commitment"
+authors = ["Steven Carter Henderson State University"]
+
+[9781590771785.a]
+progress = 100
+rating = 10
+
+[9780199596652]
+title = "Global Economic History"
+authors = ["Robert C. Allen"]
+
+[9780199596652.a]
+end = "20141104"
+progress = 100
+rating = 6
+
+[9781611803396]
+title = "Good Karma"
+authors = ["Thubten Chodron"]
+
+[9781611803396.a]
+progress = 100
+rating = 8
+
+[9781986052115]
+title = "Great Expectations"
+authors = ["Charles Dickens"]
+
+[9781986052115.a]
+end = "20150904"
+progress = 100
+rating = 8
+
+[9788499925585]
+title = "Guns, Germs, and Steel"
+authors = ["Jared Diamond"]
+
+[9788499925585.a]
+progress = 100
+rating = 8
+
+[9780679743460]
+title = "Hard-Boiled Wonderland"
+authors = ["Haruki Murakami"]
+
+[9780679743460.20240501]
+end = "20240522"
+progress = 100
+rating = 10
+
+[9780198828662]
+title = "Heidegger"
+authors = ["Michael J. Inwood"]
+
+[9780198828662.a]
+end = "20180905"
+progress = 100
+rating = 6
+
+[9781118206485]
+title = "Home Buying Kit for Dummies"
+authors = ["Eric Tyson"]
+
+[9781118206485.a]
+end = "20210524"
+progress = 100
+rating = 10
+
+[9780525511830]
+title = "How Fascism Works"
+authors = ["Jason F. Stanley"]
+
+[9780525511830.a]
+end = "20201215"
+progress = 100
+rating = 8
+
+[9780062252197]
+title = "How Jesus Became God"
+authors = ["Bart D. Ehrman"]
+
+[9780062252197.a]
+end = "20201013"
+progress = 100
+rating = 8
+
+[9781492697343]
+title = "How Rich People Think"
+authors = ["Steve Siebold"]
+
+[9781492697343.a]
+progress = 100
+rating = 8
+
+[9781847926005]
+title = "How to Be an Antiracist"
+authors = ["Ibram X. Kendi"]
+
+[9781847926005.a]
+end = "20191108"
+progress = 100
+rating = 10
+
+[9781941529515]
+title = "How to Relax"
+authors = ["Thich Nhat Hanh"]
+
+[9781941529515.a]
+progress = 100
+rating = 10
+
+[1937094510]
+title = "How to Win Friends & Influence People"
+authors = ["Dale Carnegie"]
+
+[1937094510.a]
+progress = 100
+rating = 10
+
+[9780812993882]
+title = "How We Learn"
+authors = ["Benedict Carey"]
+
+[9780812993882.a]
+end = "20190401"
+progress = 100
+rating = 8
+
+[9781626567344]
+title = "Humble Inquiry"
+authors = ["Edgar H. Schein"]
+
+[9781626567344.a]
+end = "20210106"
+progress = 100
+rating = 6
+
+[9783453133044]
+title = "Hyperion"
+authors = ["Dan Simmons"]
+
+[9783453133044.a]
+progress = 100
+rating = 8
+
+[9780553382563]
+title = "I, Robot"
+authors = ["Isaac Asimov"]
+
+[9780553382563.a]
+progress = 100
+rating = 10
+
+[9781921922107]
+title = "Imagine"
+authors = ["Jonah Lehrer"]
+
+[9781921922107.a]
+progress = 100
+rating = 8
+
+[9786257963282]
+title = "Imperial Machine"
+authors = ["Charles Soule"]
+
+[9786257963282.a]
+progress = 100
+rating = 8
+
+[0893403679]
+title = "In the beginning"
+authors = ["Isaac Asimov"]
+
+[0893403679.a]
+end = "20181106"
+progress = 100
+rating = 6
+
+[9780520262492]
+title = "Infinite City"
+authors = ["Rebecca Solnit"]
+
+[9780520262492.a]
+end = "20220426"
+progress = 100
+rating = 8
+
+[9781786492975]
+title = "Infinite Powers"
+authors = ["Steven H. Strogatz"]
+
+[9781786492975.a]
+end = "20210803"
+progress = 100
+rating = 10
+
+[9780061241895]
+title = "Influence"
+authors = ["Robert B. Cialdini"]
+
+[9780061241895.a]
+end = "20150204"
+progress = 100
+rating = 10
+
+[9780199551378]
+title = "Information"
+authors = ["Luciano Floridi"]
+
+[9780199551378.a]
+progress = 100
+rating = 8
+
+[9780809074471]
+title = "Innumeracy"
+authors = ["John Allen Paulos"]
+
+[9780809074471.a]
+progress = 100
+rating = 10
+
+[0226739368]
+title = "Into The Cool"
+authors = ["Eric D. Schneider", "Dorion Sagain"]
+
+[0226739368.20260107]
+end = "20260510"
+progress = 100
+rating = 8
+
+[9780500293652]
+title = "Is Democracy Failing?"
+authors = ["Niheer Dasandi"]
+
+[9780500293652.a]
+end = "20190817"
+progress = 100
+rating = 6
+
+[9780553274325]
+title = "Johnny Got His Gun"
+authors = ["Dalton Trumbo"]
+
+[9780553274325.a]
+progress = 100
+rating = 6
+
+[9788172235789]
+title = "Jonathan Livingston Seagull"
+authors = ["Richard Bach"]
+
+[9788172235789.a]
+progress = 100
+rating = 6
+
+[9780982517284]
+title = "Joshua Tree"
+authors = ["James Kaiser"]
+
+[9780982517284.a]
+end = "20211016"
+progress = 100
+rating = 8
+
+[9780192854582]
+title = "Jung"
+authors = ["Anthony Stevens"]
+
+[9780192854582.a]
+progress = 100
+rating = 10
+
+[9781484433065]
+title = "King Dork"
+authors = ["Frank Portman"]
+
+[9781484433065.a]
+progress = 100
+rating = 6
+
+[9781302907457]
+title = "Legacy's End"
+authors = ["Charles Soule"]
+
+[9781302907457.a]
+progress = 100
+rating = 8
+
+[9788417743239]
+title = "Lenin"
+authors = ["Victor Sebestyen"]
+
+[9788417743239.a]
+end = "20190831"
+progress = 100
+rating = 8
+
+[9781538407189]
+title = "Liminal Thinking"
+authors = ["Dave  Gray"]
+
+[9781538407189.a]
+end = "20210629"
+progress = 100
+rating = 10
+
+[9780470430903]
+title = "Linear Algebra For Dummies"
+authors = ["Mary Jane Sterling"]
+
+[9780470430903.20250117]
+end = "20250124"
+progress = 100
+rating = 5
+notes = """
+(Did not finish) Too focused on formulas. I'm looking for a book that provides a lot of context and explanation of real-world problems that linear algebra can solve.
+"""
+
+[9780080510347]
+title = "Linux and the Unix Philosophy"
+authors = ["Mike Gancarz"]
+
+[9780080510347.a]
+progress = 100
+rating = 8
+
+[9780134689326]
+title = "Living Documentation"
+authors = ["Cyrille Martraire"]
+
+[9780134689326.a]
+end = "20230811"
+progress = 100
+rating = 8
+
+[9780679723165]
+title = "Lolita"
+authors = ["Vladimir Nabokov"]
+
+[9780679723165.a]
+end = "20191003"
+progress = 100
+rating = 10
+
+[9780780776821]
+title = "Lord of the Flies"
+authors = ["William Golding"]
+
+[9780780776821.a]
+progress = 100
+rating = 10
+
+[9780593418109]
+title = "Love Triangle"
+authors = ["Matt Parker"]
+
+[9780593418109.20251027]
+end = "20251117"
+progress = 100
+rating = 7
+notes = """
+A lot of fun ideas but I don't feel like I learned much about trigonometry, which was my main goal.
+"""
+
+[9780099505693]
+title = "Made to Stick"
+authors = ["Chip Heath"]
+
+[9780099505693.a]
+progress = 100
+rating = 8
+
+[9780199588022]
+title = "Magic"
+authors = ["Owen Davies"]
+
+[9780199588022.20250319]
+end = "20250329"
+progress = 100
+rating = 9
+notes = """
+The writing flowed very smooth. I learned some interesting things. It was a proper overview of the field.
+"""
+
+[9780674986572]
+title = "Make It Stick"
+authors = ["Peter C. Brown"]
+
+[9780674986572.a]
+progress = 100
+rating = 6
+
+[9780893950255]
+title = "Making of Golden Gate Park"
+authors = ["Raymond H. Clary"]
+
+[9780893950255.a]
+end = "20230426"
+progress = 100
+rating = 8
+
+[1939202299]
+title = "Making Spaces Safer"
+authors = ["Shawna Potter"]
+
+[1939202299.a]
+end = "20190903"
+progress = 100
+rating = 10
+
+[9688534250]
+title = "Man’s Search for Meaning"
+authors = ["Viktor E. Frankl"]
+
+[9688534250.a]
+end = "20150108"
+progress = 100
+rating = 10
+
+[9780192853615]
+title = "Mathematics"
+authors = ["Timothy Gowers"]
+
+[9780192853615.a]
+progress = 100
+rating = 8
+
+[9781986406154]
+title = "McTeague"
+authors = ["Frank Norris"]
+
+[9781986406154.a]
+end = "20230620"
+progress = 100
+rating = 8
+
+[9781591799429]
+title = "Meditation for Beginners"
+authors = ["Jack Kornfield"]
+
+[9781591799429.a]
+end = "20150823"
+progress = 100
+rating = 8
+
+[9788416579167]
+title = "Mindset"
+authors = ["Carol S. Dweck"]
+
+[9788416579167.a]
+end = "20180526"
+progress = 100
+rating = 8
+
+[9781718908680]
+title = "Moby Dick"
+authors = ["Herman Melville"]
+
+[9781718908680.a]
+progress = 100
+rating = 10
+
+[9780198931102]
+title = "Modern China"
+authors = ["Rana Mitter"]
+
+[9780198931102.a]
+end = "20210704"
+progress = 100
+rating = 8
+
+[9780199235698]
+title = "Modern Japan"
+authors = ["Christopher Goto-Jones"]
+
+[9780199235698.a]
+end = "20240116"
+progress = 100
+rating = 8
+
+[9780415253901]
+title = "Modern Man in Search of a Soul"
+authors = ["C.G. Jung"]
+
+[9780415253901.a]
+progress = 100
+rating = 10
+
+[9798412905754]
+title = "Mrs. Dalloway"
+authors = ["Virginia Woolf"]
+
+[9798412905754.a]
+progress = 100
+rating = 6
+
+[9781580085793]
+title = "Mycelium Running"
+authors = ["Paul Stamets"]
+
+[9781580085793.a]
+end = "20220204"
+progress = 100
+rating = 8
+
+[9780199588077]
+title = "Networks"
+authors = ["Guido Caldarelli"]
+
+[9780199588077.a]
+progress = 100
+rating = 8
+
+[9788758804118]
+title = "Neuromancer"
+authors = ["William Gibson"]
+
+[9788758804118.a]
+progress = 100
+rating = 8
+
+[9780413773760]
+title = "Oleanna"
+authors = ["David Mamet"]
+
+[9780413773760.a]
+progress = 100
+rating = 6
+
+[9780915144945]
+title = "On the Advantage and Disadvantage of History for Life"
+authors = ["Friedrich Nietzsche"]
+
+[9780915144945.a]
+progress = 100
+rating = 8
+
+[9780451016195]
+title = "On the Road"
+authors = ["Jack Kerouac"]
+
+[9780451016195.a]
+progress = 100
+rating = 4
+
+[9786055029869]
+title = "On Trails"
+authors = ["Robert Moor"]
+
+[9786055029869.a]
+end = "20180510"
+progress = 100
+rating = 8
+
+[9788447307333]
+title = "One Flew Over the Cuckoo’s Nest"
+authors = ["Ken Kesey"]
+
+[9788447307333.a]
+progress = 100
+rating = 10
+
+[9781718502345]
+title = "Open Circuits"
+authors = ["Windell Oskay"]
+
+[9781718502345.a]
+end = "20221021"
+progress = 100
+rating = 10
+
+[9780374537197]
+title = "Other Minds"
+authors = ["Peter Godfrey-Smith"]
+
+[9780374537197.a]
+progress = 100
+rating = 8
+
+[9781846550621]
+title = "Peeling the Onion"
+authors = ["Günter Grass"]
+
+[9781846550621.a]
+progress = 100
+rating = 4
+
+[9780198809074]
+title = "Philosophy of Mind"
+authors = ["Barbara Gail Montero"]
+
+[9780198809074.a]
+end = "20240202"
+progress = 100
+rating = 10
+
+[9780198745587]
+title = "Philosophy of Science"
+authors = ["Samir Okasha"]
+
+[9780198745587.a]
+end = "20230713"
+progress = 100
+rating = 10
+
+[9781953953575]
+title = "Poor Charlie's Almanack"
+authors = ["Charles T. Munger"]
+
+[9781953953575.a]
+end = "20161228"
+progress = 100
+rating = 8
+
+[9781876756871]
+title = "Pornland"
+authors = ["Gail Dines"]
+
+[9781876756871.a]
+end = "20161013"
+progress = 100
+rating = 8
+
+[9780593239933]
+title = "Poverty, by America"
+authors = ["Matthew Desmond"]
+
+[9780593239933.a]
+end = "20231106"
+progress = 100
+rating = 10
+
+[9780964326118]
+title = "Power Versus Force"
+authors = ["David R. Hawkins"]
+
+[9780964326118.a]
+end = "20220210"
+progress = 100
+rating = 6
+
+[9780007307432]
+title = "Predictably Irrational"
+authors = ["Dan Ariely"]
+
+[9780007307432.a]
+end = "20150807"
+progress = 100
+rating = 8
+
+[9780553278392]
+title = "Prelude to Foundation"
+authors = ["Isaac Asimov"]
+
+[9780553278392.a]
+progress = 100
+rating = 8
+
+[9780446393638]
+title = "Preludes & Nocturnes"
+authors = ["Neil Gaiman"]
+
+[9780446393638.a]
+end = "20141101"
+progress = 100
+rating = 8
+
+[9781458711434]
+title = "Present Moment Wonderful Moment"
+authors = ["Thich Nhat Hanh"]
+
+[9781458711434.a]
+progress = 100
+rating = 8
+
+[9781982160272]
+title = "Principles for Dealing with the Changing World Order"
+authors = ["Ray Dalio"]
+
+[9781982160272.20250503]
+end = "20250508"
+progress = 100
+rating = 8
+
+[9780199588480]
+title = "Probability"
+authors = ["John Haigh"]
+
+[9780199588480.a]
+end = "20210403"
+progress = 100
+rating = 8
+
+[9780804615112]
+title = "Propaganda"
+authors = ["Edward L. Bernays"]
+
+[9780804615112.a]
+end = "20200404"
+progress = 100
+rating = 8
+
+[9780192802521]
+title = "Quantum Theory"
+authors = ["John C. Polkinghorne"]
+
+[9780192802521.a]
+end = "20190403"
+progress = 100
+rating = 6
+
+[9780199236220]
+title = "Relativity"
+authors = ["Russell Stannard"]
+
+[9780199236220.a]
+end = "20190418"
+progress = 100
+rating = 8
+
+[9780471770886]
+title = "Reminiscences of a Stock Operator"
+authors = ["Edwin Lefèvre"]
+
+[9780471770886.a]
+end = "20220822"
+progress = 100
+rating = 10
+
+[9781846045813]
+title = "Resilient"
+authors = ["Rick Hanson"]
+
+[9781846045813.a]
+end = "20181031"
+progress = 100
+rating = 10
+
+[9780199576203]
+title = "Risk"
+authors = ["Baruch Fischhoff"]
+
+[9780199576203.a]
+end = "20150301"
+progress = 100
+rating = 8
+
+[9781302520106]
+title = "Rogues And Rebels"
+authors = ["Greg Pak"]
+
+[9781302520106.a]
+progress = 100
+rating = 8
+
+[9780802713735]
+title = "Salt"
+authors = ["Mark Kurlansky"]
+
+[9780802713735.a]
+end = "20180616"
+progress = 100
+rating = 8
+
+[9780738530536]
+title = "San Francisco's Richmond District"
+authors = ["Lorri Ungaretti"]
+
+[9780738530536.20241201]
+end = "20240202"
+progress = 100
+rating = 7
+
+[9781784873646]
+title = "Sapiens"
+authors = ["Yuval Noah Harari"]
+
+[9781784873646.a]
+end = "20180911"
+progress = 100
+rating = 8
+
+[9781449335540]
+title = "Scope & Closures"
+authors = ["Kyle Simpson"]
+
+[9781449335540.a]
+progress = 100
+rating = 8
+
+[0374174229]
+title = "Sea of Poppies"
+authors = ["Amitav Ghosh"]
+
+[0374174229.a]
+progress = 100
+rating = 8
+
+[9781852864477]
+title = "Season of Mists"
+authors = ["Neil Gaiman"]
+
+[9781852864477.a]
+progress = 100
+rating = 8
+
+[9789993068808]
+title = "Second Foundation"
+authors = ["Isaac Asimov"]
+
+[9789993068808.a]
+progress = 100
+rating = 8
+
+[9780061336454]
+title = "Secrets of the Millionaire Mind"
+authors = ["T. Harv Eker"]
+
+[9780061336454.a]
+progress = 100
+rating = 10
+
+[9780785192565]
+title = "Shadows and Secrets"
+authors = ["Kieron Gillen"]
+
+[9780785192565.a]
+progress = 100
+rating = 8
+
+[9780812974782]
+title = "Siddhartha"
+authors = ["Hermann Hesse"]
+
+[9780812974782.a]
+progress = 100
+rating = 4
+
+[9781559276016]
+title = "Six Pillars of Self-Esteem"
+authors = ["Nathaniel Branden"]
+
+[9781559276016.a]
+end = "20180202"
+progress = 100
+rating = 10
+
+[9780316743006]
+title = "Skunk Works"
+authors = ["Ben R. Rich", "Leo Janos"]
+
+[9780316743006.a]
+progress = 100
+
+[9780385333849]
+title = "Slaughterhouse-Five"
+authors = ["Kurt Vonnegut Jr."]
+
+[9780385333849.a]
+progress = 100
+rating = 10
+
+[9788466300407]
+title = "Speaker for the Dead"
+authors = ["Orson Scott Card"]
+
+[9788466300407.a]
+end = "20190412"
+progress = 100
+rating = 8
+
+[9780300040005]
+title = "Stabilizing an Unstable Economy"
+authors = ["Hyman P. Minsky"]
+
+[9780300040005.a]
+end = "20180311"
+progress = 100
+rating = 8
+
+[9781473549470]
+title = "Stamped from the Beginning"
+authors = ["Ibram X. Kendi"]
+
+[9781473549470.a]
+end = "20191213"
+progress = 100
+rating = 8
+
+[9780425029459]
+title = "Starship Troopers"
+authors = ["Robert A. Heinlein"]
+
+[9780425029459.a]
+progress = 100
+rating = 6
+
+[9780765304193]
+title = "Stories of Your Life and Others"
+authors = ["Ted Chiang"]
+
+[9780765304193.a]
+end = "20161118"
+progress = 100
+rating = 10
+
+[9781646792641]
+title = "Storm of Steel"
+authors = ["Ernst Jünger"]
+
+[9781646792641.a]
+progress = 100
+rating = 8
+
+[9780786109524]
+title = "Stranger in a Strange Land"
+authors = ["Robert A. Heinlein"]
+
+[9780786109524.a]
+end = "20180422"
+progress = 100
+rating = 8
+
+[9780132916523]
+title = "Structured Computer Organization"
+authors = ["Andrew S. Tanenbaum"]
+
+[9780132916523.a]
+end = "20230321"
+progress = 100
+rating = 8
+
+[9780812906745]
+title = "Systemantics"
+authors = ["John Gall"]
+
+[9780812906745.a]
+end = "20240125"
+progress = 100
+rating = 8
+
+[9789386538314]
+title = "Tao Te Ching"
+authors = ["Lao Tzu"]
+
+[9789386538314.a]
+progress = 100
+rating = 10
+
+[9780805420470]
+title = "The Abolition of Man"
+authors = ["C.S. Lewis"]
+
+[9780805420470.a]
+progress = 100
+rating = 10
+
+[9785170502745]
+title = "The Alchemist"
+authors = ["Paulo Coelho"]
+
+[9785170502745.a]
+end = "20160625"
+progress = 100
+rating = 8
+
+[9780671634551]
+title = "The Alchemy of Finance"
+authors = ["George Soros"]
+
+[9780671634551.a]
+end = "20210520"
+progress = 100
+rating = 8
+
+[0062912410]
+title = "The Art of Loving"
+authors = ["Erich Fromm"]
+
+[0062912410.a]
+progress = 100
+rating = 10
+
+[9789750820984]
+title = "The Ascent of Money"
+authors = ["Niall Ferguson"]
+
+[9789750820984.a]
+end = "20141123"
+progress = 100
+rating = 10
+
+[9798990375918]
+title = "The Autobiography of Benjamin Franklin"
+authors = ["Benjamin Franklin"]
+
+[9798990375918.a]
+end = "20141108"
+progress = 100
+rating = 8
+
+[9780345350688]
+title = "The Autobiography of Malcolm X"
+authors = ["Malcolm X"]
+
+[9780345350688.a]
+end = "20180129"
+progress = 100
+rating = 8
+
+[9780061577246]
+title = "The Beauty Myth"
+authors = ["Naomi Wolf"]
+
+[9780061577246.a]
+end = "20160804"
+progress = 100
+rating = 8
+
+[9780061872808]
+title = "The Big Leap"
+authors = ["Gay Hendricks"]
+
+[9780061872808.a]
+progress = 100
+rating = 8
+
+[9781443425452]
+title = "The Big Sleep"
+authors = ["Raymond Chandler"]
+
+[9781443425452.a]
+progress = 100
+rating = 8
+
+[9780679724674]
+title = "The Black Jacobins"
+authors = ["C.L.R. James"]
+
+[9780679724674.a]
+end = "20210103"
+progress = 100
+rating = 8
+
+[9780857522405]
+title = "The Body"
+authors = ["Bill Bryson"]
+
+[9780857522405.a]
+end = "20201201"
+progress = 100
+rating = 8
+
+[9780809590650]
+title = "The Bridge of San Luis Rey"
+authors = ["Thornton Wilder"]
+
+[9780809590650.a]
+progress = 100
+rating = 8
+
+[9781302910563]
+title = "The Burning Seas"
+authors = ["Charles Soule"]
+
+[9781302910563.a]
+progress = 100
+rating = 8
+
+[9780316769174]
+title = "The Catcher in the Rye"
+authors = ["J.D. Salinger"]
+
+[9780316769174.a]
+progress = 100
+rating = 6
+
+[9781565928756]
+title = "The Cathedral & the Bazaar"
+authors = ["Eric S. Raymond"]
+
+[9781565928756.a]
+progress = 100
+rating = 8
+
+[9780785774457]
+title = "The Caves of Steel"
+authors = ["Isaac Asimov"]
+
+[9780785774457.a]
+progress = 100
+rating = 8
+
+[9780199578757]
+title = "The Cell"
+authors = ["Terence Allen"]
+
+[9780199578757.a]
+end = "20190331"
+progress = 100
+rating = 8
+
+[9780330520102]
+title = "The City & The City"
+authors = ["China Miéville"]
+
+[9780330520102.a]
+end = "20210822"
+progress = 100
+rating = 6
+
+[9788576574958]
+title = "The City and the Stars"
+authors = ["Arthur C. Clarke"]
+
+[9788576574958.a]
+end = "20180603"
+progress = 100
+rating = 10
+
+[9780140449266]
+title = "The Count of Monte Cristo"
+authors = ["Alexandre Dumas"]
+
+[9780140449266.a]
+progress = 100
+rating = 10
+
+[9781608197101]
+title = "The Crusades of Cesar Chavez"
+authors = ["Miriam Pawel"]
+
+[9781608197101.a]
+end = "20220607"
+progress = 100
+rating = 8
+
+[9789170012945]
+title = "The da Vinci Code"
+authors = ["Dan Brown"]
+
+[9789170012945.a]
+progress = 100
+rating = 2
+
+[9780765386694]
+title = "The Dark Forest"
+authors = ["Liu Cixin"]
+
+[9780765386694.a]
+end = "20231124"
+progress = 100
+rating = 8
+
+[9781529352528]
+title = "The Deficit Myth"
+authors = ["Stephanie Kelton"]
+
+[9781529352528.a]
+end = "20210718"
+progress = 100
+rating = 8
+
+[9780586042199]
+title = "The Dispossessed"
+authors = ["Ursula K. Le Guin"]
+
+[9780586042199.a]
+end = "20121118"
+progress = 100
+rating = 4
+
+[9780930289591]
+title = "The Doll's House"
+authors = ["Neil Gaiman"]
+
+[9780930289591.a]
+progress = 100
+rating = 8
+
+[9781732265110]
+title = "The Dream Machine"
+authors = ["M. Mitchell Waldrop"]
+
+[9781732265110.20241001]
+end = "20241130"
+progress = 100
+rating = 8
+notes = """
+This book was a struggle to read. I think there were too many details about who, what, where, etc. I did learn a lot about the history of computers in the 1950s and 1960s, though. In particular, I now have a appreciation for the timesharing revolution. I also built a lot of intuition around how deeply timeharing influenced UNIX's design.
+"""
+
+[9781621381969]
+title = "The Elements of Rhetoric"
+authors = ["Ryan N.S. Topping"]
+
+[9781621381969.a]
+end = "20211020"
+progress = 100
+rating = 6
+
+[9781504054225]
+title = "The Ethics of Ambiguity"
+authors = ["Simone de Beauvoir"]
+
+[9781504054225.a]
+end = "20200506"
+progress = 100
+rating = 6
+
+[9780199680306]
+title = "The Eye"
+authors = ["Michael F. Land"]
+
+[9780199680306.a]
+end = "20190505"
+progress = 100
+rating = 4
+
+[9780575099937]
+title = "The Fall of Hyperion"
+authors = ["Dan Simmons"]
+
+[9780575099937.a]
+end = "20140116"
+progress = 100
+rating = 6
+
+[9782070515790]
+title = "The Fellowship of the Ring"
+authors = ["J.R.R. Tolkien"]
+
+[9782070515790.a]
+end = "20130527"
+progress = 100
+rating = 6
+
+[9780712698856]
+title = "The Fifth Discipline"
+authors = ["Peter M. Senge"]
+
+[9780712698856.a]
+end = "20240221"
+progress = 100
+rating = 6
+
+[3453304675]
+title = "The Forever War"
+authors = ["Joe Haldeman"]
+
+[3453304675.a]
+end = "20190310"
+progress = 100
+rating = 8
+
+[9780198840077]
+title = "The French Revolution"
+authors = ["William Doyle"]
+
+[9780198840077.a]
+end = "20180313"
+progress = 100
+rating = 8
+notes = """
+Fond memories of walking around Paris reading this!
+"""
+
+[9781075691072]
+title = "The Gold Bug"
+authors = ["Edgar Allan Poe"]
+
+[9781075691072.a]
+end = "20190901"
+progress = 100
+rating = 6
+
+[9788490061626]
+title = "The Guns of August"
+authors = ["Barbara W. Tuchman"]
+
+[9788490061626.a]
+progress = 100
+rating = 6
+
+[1557360863]
+title = "The Heart Is a Lonely Hunter"
+authors = ["Carson McCullers"]
+
+[1557360863.a]
+progress = 100
+rating = 8
+
+[9781778401404]
+title = "The Hidden Life of Trees"
+authors = ["Peter Wohlleben"]
+
+[9781778401404.a]
+end = "20190321"
+progress = 100
+rating = 10
+
+[0345222032]
+title = "The High Window"
+authors = ["Raymond Chandler"]
+
+[0345222032.a]
+progress = 100
+rating = 6
+
+[9780198950080]
+title = "The History of Life"
+authors = ["Michael J. Benton"]
+
+[9780198950080.a]
+end = "20180927"
+progress = 100
+rating = 6
+
+[9780345418913]
+title = "The Hitchhiker's Guide to the Galaxy"
+authors = ["Douglas Adams"]
+
+[9780345418913.a]
+progress = 100
+rating = 8
+
+[9786053757351]
+title = "The Hobbit"
+authors = ["J.R.R. Tolkien"]
+
+[9786053757351.a]
+progress = 100
+rating = 10
+
+[9781455157037]
+title = "The Hour Between Dog and Wolf"
+authors = ["John Coates"]
+
+[9781455157037.a]
+end = "20150303"
+progress = 100
+rating = 10
+
+[9788445077580]
+title = "The Illustrated Man"
+authors = ["Ray Bradbury"]
+
+[9788445077580.a]
+progress = 100
+rating = 10
+
+[9780198936589]
+title = "The Immune System"
+authors = ["Paul Klenerman"]
+
+[9780198936589.a]
+end = "20201019"
+progress = 100
+rating = 6
+
+[9780061123535]
+title = "The Intelligent Investor"
+authors = ["Benjamin Graham"]
+
+[9780061123535.a]
+end = "20141024"
+progress = 100
+rating = 8
+
+[9780241113844]
+title = "The Lady in the Lake"
+authors = ["Raymond Chandler"]
+
+[9780241113844.a]
+progress = 100
+rating = 8
+
+[8497597257]
+title = "The Last Days of Hitler"
+authors = ["Hugh R. Trevor-Roper"]
+
+[8497597257.a]
+progress = 100
+rating = 10
+
+[9785050040107]
+title = "The Left Hand of Darkness"
+authors = ["Ursula K. Le Guin"]
+
+[9785050040107.a]
+end = "20181030"
+progress = 100
+rating = 8
+
+[9781447678618]
+title = "The Little Book of Deep Learning"
+authors = ["François Fleuret"]
+
+[9781447678618.a]
+end = "20240225"
+progress = 100
+rating = 8
+
+[9780241018118]
+title = "The Little Sister"
+authors = ["Raymond Chandler"]
+
+[9780241018118.a]
+end = "20140706"
+progress = 100
+rating = 10
+
+[9780434013197]
+title = "The Living Unknown Soldier"
+authors = ["Jean-Yves Le Naour"]
+
+[9780434013197.a]
+progress = 100
+rating = 6
+
+[9780345305824]
+title = "The Long Goodbye"
+authors = ["Raymond Chandler"]
+
+[9780345305824.a]
+progress = 100
+rating = 10
+
+[9781779515025]
+title = "The Long Halloween"
+authors = ["Jeph Loeb"]
+
+[9781779515025.a]
+end = "20121221"
+progress = 100
+rating = 4
+
+[9780062444134]
+title = "The Long Way to a Small, Angry Planet"
+authors = ["Becky Chambers"]
+
+[9780062444134.20241205]
+end = "20241216"
+progress = 100
+rating = 8
+notes = """
+The book has a "show, don't tell" problem but I enjoyed it quite a lot other than that. I was looking for a light, easy read after struggling with The Dream Machine for two months. This was exactly what I needed. I appreciate that it's not another "fate of the universe depends on us" story. I am sick of Hero's Journey stories. It's just interesting adventures in space.
+"""
+
+[9780553131796]
+title = "The Martian Chronicles"
+authors = ["Ray Bradbury"]
+
+[9780553131796.a]
+end = "20181106"
+progress = 100
+rating = 6
+
+[9780500295144]
+title = "The Maya"
+authors = ["Michael D. Coe"]
+
+[9780500295144.a]
+end = "20211128"
+progress = 100
+rating = 6
+
+[9788449309670]
+title = "The Meme Machine"
+authors = ["Susan Blackmore"]
+
+[9788449309670.a]
+end = "20190209"
+progress = 100
+rating = 6
+
+[9781417663422]
+title = "The Millionaire Next Door"
+authors = ["Thomas J. Stanley"]
+
+[9781417663422.a]
+end = "20150314"
+progress = 100
+rating = 6
+
+[9780440001355]
+title = "The Moon Is a Harsh Mistress"
+authors = ["Robert A. Heinlein"]
+
+[9780440001355.a]
+progress = 100
+rating = 8
+
+[9780525564454]
+title = "The Myth of Sisyphus"
+authors = ["Albert Camus"]
+
+[9780525564454.a]
+end = "20240305"
+progress = 100
+rating = 8
+
+[9783453031203]
+title = "The Naked Sun"
+authors = ["Isaac Asimov"]
+
+[9783453031203.a]
+progress = 100
+rating = 8
+
+[9781615745685]
+title = "The New Codependency"
+authors = ["Melody Beattie"]
+
+[9781615745685.a]
+progress = 100
+rating = 8
+
+[9780140449112]
+title = "The Odyssey"
+authors = ["Homer"]
+
+[9780140449112.a]
+progress = 100
+rating = 6
+
+[9789394270886]
+title = "The Old Man and the Sea"
+authors = ["Ernest Hemingway"]
+
+[9789394270886.a]
+progress = 100
+rating = 10
+
+[9781676708216]
+title = "The Picture of Dorian Gray"
+authors = ["Oscar Wilde"]
+
+[9781676708216.a]
+progress = 100
+rating = 10
+
+[9780140275230]
+title = "The Pity of War"
+authors = ["Niall Ferguson"]
+
+[9780140275230.a]
+progress = 100
+rating = 8
+
+[9780007183500]
+title = "The Places That Scare You"
+authors = ["Pema Chödrön"]
+
+[9780007183500.a]
+progress = 100
+rating = 10
+
+[9788539004256]
+title = "The Power of Habit"
+authors = ["Charles Duhigg"]
+
+[9788539004256.a]
+end = "20161031"
+progress = 100
+rating = 8
+
+[9780385418867]
+title = "The Power of Myth"
+authors = ["Joseph Campbell"]
+
+[9780385418867.a]
+end = "20220510"
+progress = 100
+rating = 10
+
+[9781577312192]
+title = "The Power of Now"
+authors = ["Eckhart Tolle"]
+
+[9781577312192.a]
+progress = 100
+rating = 10
+
+[9780135956915]
+title = "The Pragmatic Programmer"
+authors = ["Dave         Thomas"]
+
+[9780135956915.a]
+end = "20140130"
+progress = 100
+rating = 8
+
+[9781648337192]
+title = "The Prince"
+authors = ["Niccolò Machiavelli"]
+
+[9781648337192.a]
+progress = 100
+rating = 6
+
+[9781632155726]
+title = "The Private Eye"
+authors = ["Brian K. Vaughan"]
+
+[9781632155726.a]
+end = "20220316"
+progress = 100
+rating = 6
+
+[9780804011662]
+title = "The Public and its Problems"
+authors = ["John Dewey"]
+
+[9780804011662.a]
+end = "20190804"
+progress = 100
+rating = 8
+
+[9780999249116]
+title = "The RISC-V Reader"
+authors = ["David Patterson"]
+
+[9780999249116.a]
+end = "20230524"
+progress = 100
+rating = 8
+
+[0246123044]
+title = "The Robots of Dawn"
+authors = ["Isaac Asimov"]
+
+[0246123044.a]
+progress = 100
+rating = 10
+
+[9780203708996]
+title = "The Sane Society"
+authors = ["Erich Fromm"]
+
+[9780203708996.a]
+end = "20180326"
+progress = 100
+rating = 10
+
+[9780403009183]
+title = "The Santa Fe Trail"
+authors = ["Robert L. Duffus"]
+
+[9780403009183.a]
+end = "20190706"
+progress = 100
+rating = 8
+
+[0061949027]
+title = "The Screwtape Letters"
+authors = ["C.S. Lewis"]
+
+[0061949027.a]
+progress = 100
+rating = 8
+
+[9781594202032]
+title = "The Second Book of the Tao"
+authors = ["Stephen Mitchell"]
+
+[9781594202032.a]
+progress = 100
+rating = 8
+
+[9780198575191]
+title = "The Selfish Gene"
+authors = ["Richard Dawkins"]
+
+[9780198575191.a]
+progress = 100
+rating = 10
+
+[9781532141669]
+title = "The Shu-Torun War"
+authors = ["Kieron Gillen"]
+
+[9781532141669.a]
+end = "20230111"
+progress = 100
+rating = 10
+
+[9781736894705]
+title = "The Simplest Baby Book In The World"
+authors = ["S. M. Gross"]
+
+[9781736894705.20241228]
+end = "20250115"
+progress = 100
+rating = 8
+
+[9780553905496]
+title = "The Snowball"
+authors = ["Alice Schroeder"]
+
+[9780553905496.a]
+end = "20141015"
+progress = 100
+rating = 8
+
+[9780060191733]
+title = "The Soul of Sex"
+authors = ["Thomas  Moore"]
+
+[9780060191733.a]
+end = "20170709"
+progress = 100
+rating = 10
+
+[9780735222915]
+title = "The Square and the Tower"
+authors = ["Niall Ferguson"]
+
+[9780575079090]
+title = "The Stars My Destination"
+authors = ["Alfred Bester"]
+
+[9780575079090.a]
+end = "20170410"
+progress = 100
+rating = 10
+
+[9781627899956]
+title = "The Story of China"
+authors = ["Michael Wood"]
+
+[9781627899956.a]
+end = "20221012"
+progress = 100
+rating = 8
+
+[9780679720201]
+title = "The Stranger"
+authors = ["Albert Camus"]
+
+[9780679720201.a]
+progress = 100
+rating = 8
+
+[9780226458120]
+title = "The Structure of Scientific Revolutions"
+authors = ["Thomas S. Kuhn"]
+
+[9780226458120.a]
+progress = 100
+rating = 10
+
+[9780198832690]
+title = "The Sun"
+authors = ["Philip Judge"]
+
+[9780198832690.20250208]
+end = "20250225"
+progress = 100
+rating = 5
+notes = """
+Too much jargon. Did not effectively explain central ideas. Did not inspire me to learn more about Sol, yet I know it's a fascinating topic.
+"""
+
+[9781449486792]
+title = "The Sun and Her Flowers"
+authors = ["Rupi Kaur"]
+
+[9781449486792.a]
+end = "20181106"
+progress = 100
+rating = 8
+
+[9782382262375]
+title = "The Thin Man"
+authors = ["Dashiell Hammett"]
+
+[9782382262375.a]
+end = "20140416"
+progress = 100
+rating = 8
+
+[9780307594990]
+title = "The Three Musketeers"
+authors = ["Alexandre Dumas"]
+
+[9780307594990.a]
+progress = 100
+rating = 8
+
+[9780765382030]
+title = "The Three-Body Problem"
+authors = ["Liu Cixin"]
+
+[9780765382030.a]
+end = "20230706"
+progress = 100
+rating = 10
+
+[9788481362602]
+title = "The Two Towers"
+authors = ["J.R.R. Tolkien"]
+
+[9788481362602.a]
+progress = 100
+rating = 6
+
+[9780316476935]
+title = "The Undiscovered Self"
+authors = ["C.G. Jung"]
+
+[9780316476935.a]
+end = "20170713"
+progress = 100
+rating = 8
+
+[0139376992]
+title = "The Unix Programming Environment"
+authors = ["Brian Kernighan"]
+
+[0139376992.20241201]
+end = "20241208"
+progress = 100
+rating = 7
+
+[9781914484865]
+title = "The Urge"
+authors = ["Carl Erik Fisher"]
+
+[9781914484865.a]
+end = "20220307"
+progress = 100
+rating = 8
+
+[9780781234764]
+title = "The Varieties of Religious Experience"
+authors = ["William  James"]
+
+[9780781234764.a]
+end = "20220415"
+progress = 100
+rating = 10
+
+[9780393352979]
+title = "The Vital Question"
+authors = ["Nick Lane"]
+
+[9780393352979.20250511]
+progress = 33
+
+[9780451530653]
+title = "The War of the Worlds"
+authors = ["H.G. Wells"]
+
+[9780451530653.a]
+progress = 100
+rating = 10
+
+[9798721503788]
+title = "There Is No Antimemetics Division"
+authors = ["qntm"]
+
+[9798721503788.20240820]
+end = "20240825"
+progress = 100
+rating = 9
+
+[9787550278592]
+title = "Thing Explainer"
+authors = ["Randall Munroe"]
+
+[9787550278592.a]
+end = "20160704"
+progress = 100
+rating = 8
+
+[0393932192]
+title = "Things Fall Apart"
+authors = ["Chinua Achebe"]
+
+[0393932192.a]
+end = "20140325"
+progress = 100
+rating = 8
+
+[9780735216372]
+title = "Thinking in Bets"
+authors = ["Annie Duke"]
+
+[9780735216372.a]
+end = "20211026"
+progress = 100
+rating = 8
+
+[9781136551352]
+title = "Thinking In Systems"
+authors = ["Donella H. Meadows"]
+
+[9781136551352.a]
+end = "20140209"
+progress = 100
+rating = 8
+
+[9781491904152]
+title = "this & Object Prototypes"
+authors = ["Kyle Simpson"]
+
+[9781491904152.a]
+progress = 100
+rating = 8
+
+[9781621068129]
+title = "This Is San Francisco"
+authors = ["Alexander Barrett"]
+
+[9781621068129.a]
+progress = 100
+rating = 8
+
+[9781604598827]
+title = "Thus Spoke Zarathustra"
+authors = ["Friedrich Nietzsche"]
+
+[9781604598827.a]
+end = "20190319"
+progress = 100
+rating = 8
+
+[9789992262443]
+title = "To Kill a Mockingbird"
+authors = ["Harper Lee"]
+
+[9789992262443.a]
+progress = 100
+rating = 8
+
+[9780465021420]
+title = "Too Big To Know"
+authors = ["David Weinberger"]
+
+[9780465021420.a]
+end = "20240922"
+progress = 100
+rating = 6
+
+[9780374532550]
+title = "Trickster Makes This World"
+authors = ["Lewis Hyde"]
+
+[9780374532550.a]
+end = "20210619"
+progress = 100
+rating = 8
+
+[9780198814313]
+title = "Trigonometry"
+authors = ["Glen Van Brummelen"]
+
+[9780198814313.20250225]
+end = "20250313"
+progress = 100
+rating = 6
+notes = """
+It started out strong but then it got too advanced. The later chapters mostly just show interesting connections between trigonometry and other areas of math. What I was looking for was a really solid foundation in trigonometry principles.
+"""
+
+[9781473678491]
+title = "Trigonometry"
+authors = ["Hugh Neill"]
+
+[9781473678491.20251118]
+end = "20251206"
+progress = 100
+rating = 9
+notes = """
+A bit dry but a very good introduction overall. Walks through many examples in detail.
+"""
+
+[9780747572633]
+title = "True Grit"
+authors = ["Charles Portis"]
+
+[9780747572633.a]
+progress = 100
+rating = 8
+
+[0807151440]
+title = "Twelve Years a Slave"
+authors = ["Solomon Northup"]
+
+[0807151440.a]
+progress = 100
+rating = 8
+
+[9781491904190]
+title = "Types & Grammar"
+authors = ["Kyle Simpson"]
+
+[9781491904190.a]
+end = "20160903"
+progress = 100
+rating = 8
+
+[9781099572593]
+title = "Under Fire"
+authors = ["Henri Barbusse"]
+
+[9781099572593.a]
+progress = 100
+rating = 8
+
+[9781305674257]
+title = "Understanding Operating Systems"
+authors = ["Ida M. Flynn"]
+
+[9781305674257.a]
+end = "20131020"
+progress = 100
+rating = 8
+
+[9781592530076]
+title = "Universal Principles of Design"
+authors = ["William Lidwell"]
+
+[9781592530076.a]
+progress = 100
+rating = 8
+
+[9780606379328]
+title = "Vader"
+authors = ["Kieron Gillen"]
+
+[9780606379328.a]
+progress = 100
+rating = 8
+
+[9780226821108]
+title = "Vector"
+authors = ["Robyn Arianrhod"]
+
+[9780226821108.20250904]
+end = "20251007"
+progress = 82
+rating = 6
+notes = """
+I was hoping to get a deeper understanding of vectors by learning about their history. The book was too advanced for me. Also, the author seemed to waffle on topics more than necessary.
+"""
+
+[9780192845030]
+title = "Viruses"
+authors = ["Dorothy H. Crawford"]
+
+[9780192845030.a]
+end = "20230915"
+progress = 100
+rating = 6
+
+[9781852860240]
+title = "Watchmen"
+authors = ["Alan             Moore"]
+
+[9781852860240.a]
+progress = 100
+rating = 8
+
+[9780198708728]
+title = "Water"
+authors = ["John Finney"]
+
+[9780198708728.a]
+end = "20210813"
+progress = 100
+rating = 6
+
+[9780061214950]
+title = "What Is Your Dangerous Idea?"
+authors = []
+
+[9780061214950.20251217]
+end = "20260107"
+progress = 100
+rating = 10
+notes = """
+Fascinating collection of ideas. Each essay is only 1-3 pages.
+"""
+
+[9781910400302]
+title = "When Money Dies"
+authors = ["fergusson-adam"]
+
+[9781910400302.a]
+end = "20210314"
+progress = 100
+rating = 6
+
+[9781570621604]
+title = "When Things Fall Apart"
+authors = ["Pema Chödrön"]
+
+[9781570621604.a]
+end = "20170208"
+progress = 100
+rating = 10
+
+[9780060123949]
+title = "Where Do We Go from Here"
+authors = ["Martin Luther King Jr."]
+
+[9780060123949.a]
+end = "20211110"
+progress = 100
+rating = 8
+
+[9780547086330]
+title = "Where Have All the Soldiers Gone?"
+authors = ["James J. Sheehan"]
+
+[9780547086330.a]
+progress = 100
+rating = 8
+
+[9788595811065]
+title = "White Fragility"
+authors = ["Robin DiAngelo"]
+
+[9788595811065.a]
+end = "20191026"
+progress = 100
+rating = 10
+
+[9780399144462]
+title = "Who Moved My Cheese?"
+authors = ["Spencer Johnson"]
+
+[9780399144462.a]
+progress = 100
+rating = 4
+
+[9780593185742]
+title = "Why Machines Learn"
+authors = ["Anil Ananthaswamy"]
+
+[9780465029099]
+title = "Winner Take All"
+authors = ["Dambisa Moyo"]
+
+[9780465029099.a]
+progress = 100
+rating = 8
+
+[9788490707913]
+title = "Xenocide"
+authors = ["Orson Scott Card"]
+
+[9788490707913.a]
+progress = 100
+rating = 6
+
+[9780613919456]
+title = "Year One"
+authors = ["Frank Miller"]
+
+[9780613919456.a]
+progress = 100
+rating = 10
+
+[9781302964108]
+title = "Yoda's Secret War"
+authors = ["Jason Aaron"]
+
+[9781302964108.a]
+progress = 100
+rating = 8
+
+[9781870845014]
+title = "You Can Heal Your Life"
+authors = ["Louise L. Hay"]
+
+[9781870845014.a]
+progress = 100
+rating = 8
+
+[9780285635944]
+title = "Zero"
+authors = ["Charles Seife"]
+
+[9780285635944.a]
+progress = 100
+rating = 8
