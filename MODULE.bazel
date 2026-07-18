@@ -85,6 +85,12 @@ elm.repository(
     strip_prefix = "url-1.0.0",
     urls = ["https://github.com/elm/url/archive/1.0.0.tar.gz"],
 )
+elm.repository(
+    name = "elm_package_elm_random",
+    sha256 = "b4b9dc99d5a064bc607684dd158199208bce51c0521b7e8a515c365e0a11168d",
+    strip_prefix = "random-1.0.0",
+    urls = ["https://github.com/elm/random/archive/1.0.0.tar.gz"],
+)
 
 use_repo(
     elm,
@@ -95,5 +101,6 @@ use_repo(
     "elm_package_elm_browser",
     "elm_package_elm_time",
     "elm_package_elm_url",
+    "elm_package_elm_random",
 )
 

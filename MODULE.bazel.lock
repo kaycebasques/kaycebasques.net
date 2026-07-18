@@ -363,7 +363,7 @@
     "@@rules_elm+//elm:extensions.bzl%elm": {
       "general": {
         "bzlTransitiveDigest": "3fO79N4KeQggkYmiMU8XF4ErXyg4M2HSJ8kl3tX0f1M=",
-        "usagesDigest": "Uv09UpjXhdx3rmXiW9czMr5fdZN9VMrxC7QdJOPCpSk=",
+        "usagesDigest": "IUL0hveC/otTqsdt7yKDjglkFoe3HzkMg59lvOzH1/8=",
         "recordedInputs": [
           "REPO_MAPPING:aspect_bazel_lib+,bazel_lib bazel_lib+",
           "REPO_MAPPING:aspect_bazel_lib+,bazel_skylib bazel_skylib+",
@@ -506,6 +506,23 @@
               "patch_cmds": []
             }
           },
+          "elm_package_elm_random": {
+            "repoRuleId": "@@rules_elm+//repository:defs.bzl%elm_repository",
+            "attributes": {
+              "urls": [
+                "https://github.com/elm/random/archive/1.0.0.tar.gz"
+              ],
+              "strip_prefix": "random-1.0.0",
+              "type": "",
+              "sha256": "b4b9dc99d5a064bc607684dd158199208bce51c0521b7e8a515c365e0a11168d",
+              "patches": [],
+              "patch_tool": "patch",
+              "patch_args": [
+                "-p0"
+              ],
+              "patch_cmds": []
+            }
+          },
           "com_github_rtfeldman_node_test_runner": {
             "repoRuleId": "@@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
             "attributes": {
@@ -550,7 +567,8 @@
             "elm_package_elm_virtual_dom",
             "elm_package_elm_browser",
             "elm_package_elm_time",
-            "elm_package_elm_url"
+            "elm_package_elm_url",
+            "elm_package_elm_random"
           ],
           "explicitRootModuleDirectDevDeps": [],
           "useAllRepos": "NO",

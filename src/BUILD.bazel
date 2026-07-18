@@ -28,4 +28,5 @@ sphinx_docs(
     visibility = ["//visibility:public"],
     deps = [":srcs"],
     extra_opts = ["--fail-on-warning"],
+    allow_persistent_workers = False,
 )
