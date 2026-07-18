@@ -363,7 +363,7 @@
     "@@rules_elm+//elm:extensions.bzl%elm": {
       "general": {
         "bzlTransitiveDigest": "3fO79N4KeQggkYmiMU8XF4ErXyg4M2HSJ8kl3tX0f1M=",
-        "usagesDigest": "IUL0hveC/otTqsdt7yKDjglkFoe3HzkMg59lvOzH1/8=",
+        "usagesDigest": "VyzrQTVsrWQ/Z3wmOy9Wrug8atMYxGZce2yrYUyraiA=",
         "recordedInputs": [
           "REPO_MAPPING:aspect_bazel_lib+,bazel_lib bazel_lib+",
           "REPO_MAPPING:aspect_bazel_lib+,bazel_skylib bazel_skylib+",
@@ -387,6 +387,23 @@
           "REPO_MAPPING:tar.bzl+,tar.bzl tar.bzl+"
         ],
         "generatedRepoSpecs": {
+          "elm_package_elm_browser": {
+            "repoRuleId": "@@rules_elm+//repository:defs.bzl%elm_repository",
+            "attributes": {
+              "urls": [
+                "https://github.com/elm/browser/archive/1.0.2.tar.gz"
+              ],
+              "strip_prefix": "browser-1.0.2",
+              "type": "",
+              "sha256": "23f41491d325afc72649d512741fb8173725014c93e482d25bab3325555a4f59",
+              "patches": [],
+              "patch_tool": "patch",
+              "patch_args": [
+                "-p0"
+              ],
+              "patch_cmds": []
+            }
+          },
           "elm_package_elm_core": {
             "repoRuleId": "@@rules_elm+//repository:defs.bzl%elm_repository",
             "attributes": {
@@ -438,32 +455,15 @@
               "patch_cmds": []
             }
           },
-          "elm_package_elm_virtual_dom": {
+          "elm_package_elm_random": {
             "repoRuleId": "@@rules_elm+//repository:defs.bzl%elm_repository",
             "attributes": {
               "urls": [
-                "https://github.com/elm/virtual-dom/archive/1.0.2.tar.gz"
+                "https://github.com/elm/random/archive/1.0.0.tar.gz"
               ],
-              "strip_prefix": "virtual-dom-1.0.2",
+              "strip_prefix": "random-1.0.0",
               "type": "",
-              "sha256": "cf87286ed5d1b31aaf99c6a3368ccd340d1356b1973f1afe5f668c47e22b3b60",
-              "patches": [],
-              "patch_tool": "patch",
-              "patch_args": [
-                "-p0"
-              ],
-              "patch_cmds": []
-            }
-          },
-          "elm_package_elm_browser": {
-            "repoRuleId": "@@rules_elm+//repository:defs.bzl%elm_repository",
-            "attributes": {
-              "urls": [
-                "https://github.com/elm/browser/archive/1.0.2.tar.gz"
-              ],
-              "strip_prefix": "browser-1.0.2",
-              "type": "",
-              "sha256": "23f41491d325afc72649d512741fb8173725014c93e482d25bab3325555a4f59",
+              "sha256": "b4b9dc99d5a064bc607684dd158199208bce51c0521b7e8a515c365e0a11168d",
               "patches": [],
               "patch_tool": "patch",
               "patch_args": [
@@ -506,15 +506,15 @@
               "patch_cmds": []
             }
           },
-          "elm_package_elm_random": {
+          "elm_package_elm_virtual_dom": {
             "repoRuleId": "@@rules_elm+//repository:defs.bzl%elm_repository",
             "attributes": {
               "urls": [
-                "https://github.com/elm/random/archive/1.0.0.tar.gz"
+                "https://github.com/elm/virtual-dom/archive/1.0.2.tar.gz"
               ],
-              "strip_prefix": "random-1.0.0",
+              "strip_prefix": "virtual-dom-1.0.2",
               "type": "",
-              "sha256": "b4b9dc99d5a064bc607684dd158199208bce51c0521b7e8a515c365e0a11168d",
+              "sha256": "cf87286ed5d1b31aaf99c6a3368ccd340d1356b1973f1afe5f668c47e22b3b60",
               "patches": [],
               "patch_tool": "patch",
               "patch_args": [
@@ -561,14 +561,14 @@
         },
         "moduleExtensionMetadata": {
           "explicitRootModuleDirectDeps": [
+            "elm_package_elm_browser",
             "elm_package_elm_core",
             "elm_package_elm_html",
             "elm_package_elm_json",
-            "elm_package_elm_virtual_dom",
-            "elm_package_elm_browser",
+            "elm_package_elm_random",
             "elm_package_elm_time",
             "elm_package_elm_url",
-            "elm_package_elm_random"
+            "elm_package_elm_virtual_dom"
           ],
           "explicitRootModuleDirectDevDeps": [],
           "useAllRepos": "NO",
