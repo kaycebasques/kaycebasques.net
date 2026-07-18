@@ -1,5 +1,33 @@
 bazel_dep(name = "rules_python", version = "1.9.0")
 bazel_dep(name = "rules_elm", version = "1.1.1")
+bazel_dep(name = "rules_rust", version = "0.65.0")
+
+rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
+rust.toolchain(
+    edition = "2021",
+    versions = ["1.85.0"],
+)
+use_repo(rust, "rust_toolchains")
+
+register_toolchains("@rust_toolchains//:all")
+
+crate = use_extension("@rules_rust//crate_universe:extensions.bzl", "crate")
+crate.spec(
+    package = "clap",
+    version = "4.5",
+    features = ["derive"],
+)
+crate.spec(
+    package = "serde",
+    version = "1.0",
+    features = ["derive"],
+)
+crate.spec(
+    package = "toml",
+    version = "0.8",
+)
+crate.from_specs()
+use_repo(crate, "crates")
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.defaults(python_version = "3.12")

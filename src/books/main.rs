@@ -1,0 +1,129 @@
+use clap::{Parser, Subcommand};
+use std::collections::BTreeMap;
+use std::fs;
+use std::path::{Path, PathBuf};
+
+#[derive(Parser)]
+#[command(
+    name = "books",
+    about = "Manage book data in src/books/data.toml",
+    version = "0.1.0"
+)]
+struct Cli {
+    /// Path to data.toml (auto-resolved from workspace if not specified)
+    #[arg(long, short = 'd')]
+    data_path: Option<PathBuf>,
+
+    #[command(subcommand)]
+    command: Option<Commands>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    /// Show distribution of ratings
+    Ratings,
+}
+
+fn resolve_data_path(custom: Option<&Path>) -> PathBuf {
+    if let Some(p) = custom {
+        if p.exists() {
+            return p.to_path_buf();
+        }
+    }
+
+    // Check BUILD_WORKSPACE_DIRECTORY environment variable set by `bazel run`
+    if let Ok(workspace) = std::env::var("BUILD_WORKSPACE_DIRECTORY") {
+        let p = PathBuf::from(workspace).join("src/books/data.toml");
+        if p.exists() {
+            return p;
+        }
+    }
+
+    // Check local directory
+    let local = PathBuf::from("src/books/data.toml");
+    if local.exists() {
+        return local;
+    }
+
+    // Check Bazel runfiles
+    if let Ok(runfiles) = std::env::var("RUNFILES_DIR") {
+        let p = PathBuf::from(runfiles).join("_main/src/books/data.toml");
+        if p.exists() {
+            return p;
+        }
+    }
+
+    PathBuf::from("src/books/data.toml")
+}
+
+fn show_ratings_distribution(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
+    if !data_path.exists() {
+        eprintln!(
+            "Error: Could not locate data.toml at '{}'. Specify --data-path <path>.",
+            data_path.display()
+        );
+        std::process::exit(1);
+    }
+
+    let content = fs::read_to_string(data_path)?;
+    let val: toml::Value = toml::from_str(&content)?;
+    let table = val.as_table().ok_or("Root TOML is not a table")?;
+
+    let mut ratings = Vec::new();
+    let mut rating_dist: BTreeMap<i64, usize> = BTreeMap::new();
+
+    for (_isbn, item) in table {
+        if let Some(book_table) = item.as_table() {
+            // Check all subtables for a rating
+            let mut latest_rating: Option<i64> = None;
+            for (_key, subval) in book_table {
+                if let Some(session_table) = subval.as_table() {
+                    if let Some(r) = session_table.get("rating").and_then(|v| v.as_integer()) {
+                        latest_rating = Some(r);
+                    }
+                }
+            }
+
+            if let Some(r) = latest_rating {
+                ratings.push(r);
+                *rating_dist.entry(r).or_insert(0) += 1;
+            }
+        }
+    }
+
+    let total_rated = ratings.len();
+    let avg_rating = if total_rated > 0 {
+        ratings.iter().sum::<i64>() as f64 / total_rated as f64
+    } else {
+        0.0
+    };
+
+    println!(
+        "Rating Distribution (Total: {} rated books, Average: {:.2}/10):\n",
+        total_rated, avg_rating
+    );
+
+    let min_score = rating_dist.keys().min().copied().unwrap_or(1).min(1);
+    let max_score = rating_dist.keys().max().copied().unwrap_or(10).max(10);
+
+    for score in (min_score..=max_score).rev() {
+        let count = rating_dist.get(&score).copied().unwrap_or(0);
+        let bar = "#".repeat(count / 2);
+        println!("  {:2}/10: {:3} books | {}", score, count, bar);
+    }
+
+    Ok(())
+}
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let cli = Cli::parse();
+    let data_path = resolve_data_path(cli.data_path.as_deref());
+
+    match cli.command {
+        Some(Commands::Ratings) | None => {
+            show_ratings_distribution(&data_path)?;
+        }
+    }
+
+    Ok(())
+}
