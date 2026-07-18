@@ -24,36 +24,13 @@ enum Commands {
     Ratings,
 }
 
-fn resolve_data_path(custom: Option<&Path>) -> PathBuf {
-    if let Some(p) = custom {
-        if p.exists() {
-            return p.to_path_buf();
-        }
-    }
-
-    // Check BUILD_WORKSPACE_DIRECTORY environment variable set by `bazel run`
+fn resolve_data_path() -> PathBuf {
     if let Ok(workspace) = std::env::var("BUILD_WORKSPACE_DIRECTORY") {
-        let p = PathBuf::from(workspace).join("src/books/data.toml");
-        if p.exists() {
-            return p;
-        }
+        PathBuf::from(workspace).join("src/books/data.toml")
+    } else {
+        eprintln!("can't find data.toml");
+        std::process::exit(1);
     }
-
-    // Check local directory
-    let local = PathBuf::from("src/books/data.toml");
-    if local.exists() {
-        return local;
-    }
-
-    // Check Bazel runfiles
-    if let Ok(runfiles) = std::env::var("RUNFILES_DIR") {
-        let p = PathBuf::from(runfiles).join("_main/src/books/data.toml");
-        if p.exists() {
-            return p;
-        }
-    }
-
-    PathBuf::from("src/books/data.toml")
 }
 
 fn show_ratings_distribution(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
@@ -117,7 +94,7 @@ fn show_ratings_distribution(data_path: &Path) -> Result<(), Box<dyn std::error:
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
-    let data_path = resolve_data_path(cli.data_path.as_deref());
+    let data_path = resolve_data_path();
 
     match cli.command {
         Some(Commands::Ratings) | None => {
