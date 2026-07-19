@@ -41,5 +41,5 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ p [] [ text ("Your initial random number is: " ++ String.fromInt model.randomNumber) ]
+        [ p [] [ text ("Random number: " ++ String.fromInt model.randomNumber) ]
         ]

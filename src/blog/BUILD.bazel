@@ -10,9 +10,9 @@ sphinx_docs_library(
         "index.rst",
     ],
     prefix = "blog/",
-    deps = [
-        "//src/blog/2026/07/elm:elm_docs",
-        "//src/blog/2026/07/elm:elm_static",
-    ],
     visibility = ["//visibility:public"],
+    deps = [
+        "//src/blog/2026/07/elm",
+        "//src/blog/2026/07/elm:extra"
+    ],
 )

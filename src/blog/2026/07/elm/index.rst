@@ -1,18 +1,18 @@
 Hello, Elm!
 ===========
-The ``Hello, Elm!`` message below is a proof-of-concept that I can generate
-and embed `Elm <https://elm-lang.org/>`_ apps within
-`Sphinx <https://www.sphinx-doc.org/en/master/>`_.
+
+The random number below is a proof-of-concept that I can generate and embed an
+`Elm <https://elm-lang.org/>`_ app within this `Sphinx
+<https://www.sphinx-doc.org/en/master/>`_ site. Everything is hermetically
+built with Bazel.
 
 .. raw:: html
 
    <noscript>
-     You must have JS enabled to view the embedded Elm app that follows.
+     You must have JS enabled to generate the random number.
    </noscript>
    <div id="elm"></div>
-   <script src="main_js.js"></script>
+   <script src="./foo.js"></script>
    <script>
-     var app = Elm.Main.init({
-       node: document.getElementById('elm')
-     });
+     var app = Elm.Main.init({node: document.getElementById('elm')});
    </script>

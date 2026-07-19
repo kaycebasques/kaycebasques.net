@@ -11,4 +11,3 @@ html_theme = 'basic'
 html_permalinks_icon = "§"
 html_short_title = 'kaycebasques.net'
 html_extra_path = ['extra']
-
