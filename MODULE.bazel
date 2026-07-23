@@ -1,6 +1,8 @@
 bazel_dep(name = "rules_python", version = "1.9.0")
 bazel_dep(name = "rules_elm", version = "1.1.1")
 bazel_dep(name = "rules_rust", version = "0.65.0")
+bazel_dep(name = "platforms", version = "1.0.0")
+
 
 # -- RUST
 rust = use_extension("@rules_rust//rust:extensions.bzl", "rust")
@@ -41,6 +43,10 @@ pip.parse(
 use_repo(pip, "pypi")
 
 # -- ELM
+elm_arm64 = use_extension("//tools/elm:extension.bzl", "elm_arm64")
+use_repo(elm_arm64, "elm_aarch64_linux")
+register_toolchains("@elm_aarch64_linux//:toolchain")
+
 elm = use_extension("@rules_elm//elm:extensions.bzl", "elm")
 elm.repository(
     name = "elm_package_elm_browser",

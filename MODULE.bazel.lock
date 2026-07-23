@@ -240,6 +240,19 @@
   },
   "selectedYankedVersions": {},
   "moduleExtensions": {
+    "//tools/elm:extension.bzl%elm_arm64": {
+      "general": {
+        "bzlTransitiveDigest": "Yx4BbXGdoOoi3xDR0gVAsqVhz1PnNA8ah0n9KSmTtDY=",
+        "usagesDigest": "2bpDLzNZVYAf58EsYVOHS/v0p20dIgcKGAlz2al++RA=",
+        "recordedInputs": [],
+        "generatedRepoSpecs": {
+          "elm_aarch64_linux": {
+            "repoRuleId": "@@//tools/elm:extension.bzl%elm_aarch64_linux_repository",
+            "attributes": {}
+          }
+        }
+      }
+    },
     "@@aspect_rules_js+//npm:extensions.bzl%pnpm": {
       "general": {
         "bzlTransitiveDigest": "YkSsPa7MW/0maSE+6D6O+YhEDir6IFKbhQ17B0RJvvo=",
@@ -1279,8 +1292,8 @@
     },
     "@@rules_rust+//crate_universe/private:internal_extensions.bzl%cu_nr": {
       "general": {
-        "bzlTransitiveDigest": "L8SverRMWsP+tX8v0ogPEBYw+zik1q6+M/x47A1ae6E=",
-        "usagesDigest": "lPkIsUDOqCZobpiJMMNaUvXGAD4GBpE6gXkDflNSmvc=",
+        "bzlTransitiveDigest": "Qf/80Jy55rLi8k8EnkhNrY83gJRCOdC7M6GopaviJ0M=",
+        "usagesDigest": "lAGiU7JGcUJ6BL7JrXrtglO7l/4CfFuSP4+oWoVk9Js=",
         "recordedInputs": [
           "REPO_MAPPING:bazel_features+,bazel_features_globals bazel_features++version_extension+bazel_features_globals",
           "REPO_MAPPING:bazel_features+,bazel_features_version bazel_features++version_extension+bazel_features_version",
@@ -1295,7 +1308,8 @@
           "REPO_MAPPING:rules_rust+,bazel_tools bazel_tools",
           "REPO_MAPPING:rules_rust+,cui rules_rust++cu+cui",
           "REPO_MAPPING:rules_rust+,rules_cc rules_cc+",
-          "REPO_MAPPING:rules_rust+,rules_rust rules_rust+"
+          "REPO_MAPPING:rules_rust+,rules_rust rules_rust+",
+          "REPO_MAPPING:rules_rust+,rules_rust_ctve rules_rust++i2+rules_rust_ctve"
         ],
         "generatedRepoSpecs": {
           "cargo_bazel_bootstrap": {
@@ -1324,7 +1338,6 @@
                 "@@rules_rust+//crate_universe:src/metadata/cargo_tree_rustc_wrapper.sh",
                 "@@rules_rust+//crate_universe:src/metadata/dependency.rs",
                 "@@rules_rust+//crate_universe:src/metadata/metadata_annotation.rs",
-                "@@rules_rust+//crate_universe:src/metadata/workspace_discoverer.rs",
                 "@@rules_rust+//crate_universe:src/rendering.rs",
                 "@@rules_rust+//crate_universe:src/rendering/template_engine.rs",
                 "@@rules_rust+//crate_universe:src/rendering/templates/module_bzl.j2",
@@ -1358,7 +1371,7 @@
               "binary": "cargo-bazel",
               "cargo_lockfile": "@@rules_rust+//crate_universe:Cargo.lock",
               "cargo_toml": "@@rules_rust+//crate_universe:Cargo.toml",
-              "version": "1.85.0",
+              "version": "1.86.0",
               "timeout": 900,
               "rust_toolchain_cargo_template": "@rust_host_tools//:bin/{tool}",
               "rust_toolchain_rustc_template": "@rust_host_tools//:bin/{tool}",
