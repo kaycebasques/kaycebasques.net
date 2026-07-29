@@ -23,6 +23,7 @@ title = "A Brief History Of Everyone Who Ever Lived"
 authors = ["Adam Rutherford"]
 
 [9781615194940.20250723]
+end = "20250823"
 progress = 50
 rating = 7
 notes = """
@@ -366,12 +367,6 @@ rating = 9
 notes = """
 First half is a very effective primer for people who are already familiar with other programming languages. Second half discusses various common topics using the standard library. Wasn't as effective as the first half but was still quite helpful.
 """
-
-[8535903666]
-title = "Carnaval no fogo"
-authors = ["Ruy Castro"]
-
-[8535903666.20260103]
 
 [9780774032551]
 title = "Catch-22"
