@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+bazelisk run //scripts:new -- $argv
