@@ -22,6 +22,8 @@ struct Cli {
 enum Commands {
     /// Show distribution of ratings
     Ratings,
+    /// Print current message
+    Current,
 }
 
 fn resolve_data_path() -> PathBuf {
@@ -92,6 +94,48 @@ fn show_ratings_distribution(data_path: &Path) -> Result<(), Box<dyn std::error:
     Ok(())
 }
 
+fn show_current(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
+    if !data_path.exists() {
+        eprintln!(
+            "Error: Could not locate data.toml at '{}'. Specify --data-path <path>.",
+            data_path.display()
+        );
+        std::process::exit(1);
+    }
+
+    let content = fs::read_to_string(data_path)?;
+    let val: toml::Value = toml::from_str(&content)?;
+    let table = val.as_table().ok_or("Root TOML is not a table")?;
+
+    let mut current_books = Vec::new();
+
+    for (isbn, item) in table {
+        if let Some(book_table) = item.as_table() {
+            let title = book_table
+                .get("title")
+                .and_then(|v| v.as_str())
+                .unwrap_or("Unknown Title");
+
+            for (key, subval) in book_table {
+                if let Some(session_table) = subval.as_table() {
+                    let is_start_date = key != "a" && key.chars().all(|c| c.is_ascii_digit());
+                    if is_start_date && session_table.get("end").is_none() {
+                        current_books.push((isbn.clone(), title.to_string()));
+                    }
+                }
+            }
+        }
+    }
+
+    current_books.sort_by(|a, b| a.1.cmp(&b.1));
+
+    for (isbn, title) in &current_books {
+        println!("{}: {}", isbn, title);
+    }
+
+    Ok(())
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
     let data_path = resolve_data_path();
@@ -99,6 +143,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     match cli.command {
         Some(Commands::Ratings) | None => {
             show_ratings_distribution(&data_path)?;
+        }
+        Some(Commands::Current) => {
+            show_current(&data_path)?;
         }
     }
 
