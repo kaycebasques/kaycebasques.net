@@ -2686,7 +2686,17 @@ title = "The Vital Question"
 authors = ["Nick Lane"]
 
 [9780393352979.20250511]
-progress = 33
+end = "20260529"
+progress = 100
+rating = 7
+notes = """
+I know a lot more about a contemporary theory of the origin of life.
+But the book seemed to meander a lot. And it was full of A LOT of
+technical detail. Arguably too much. The most valuable knowledge I
+gained is a much deeper understanding and appreciation of ATP. The
+author argues that it's even more fundamental than DNA and should
+be considered a core symbol of life, right alongside the double helix.
+"""
 
 [9780451530653]
 title = "The War of the Worlds"
