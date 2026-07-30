@@ -9,3 +9,4 @@ Blog
    2026/03/rotation/index
    2026/04/tapestry/index
    2026/07/elm/index
+   2026/07/heap/index
