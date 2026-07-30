@@ -1,9 +1,9 @@
 alias(
-    name = "sources",
+    name = "ls",
     actual = "//src:_src/_sources",
 )
 
 alias(
-    name = "server",
+    name = "dev",
     actual = "//src:src.serve",
 )
