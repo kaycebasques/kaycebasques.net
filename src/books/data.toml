@@ -2207,6 +2207,13 @@ end = "20141024"
 progress = 100
 rating = 8
 
+[9780544105850]
+title = "The Joy Of X"
+authors = ["Steven Strogatz"]
+
+[9780544105850.20260801]
+progress = 10
+
 [9780241113844]
 title = "The Lady in the Lake"
 authors = ["Raymond Chandler"]
