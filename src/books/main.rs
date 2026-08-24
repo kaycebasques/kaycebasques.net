@@ -1,4 +1,4 @@
-use clap::{Parser, Subcommand};
+use clap::{CommandFactory, Parser, Subcommand};
 use std::collections::BTreeMap;
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -26,8 +26,10 @@ enum Commands {
     Current,
 }
 
-fn resolve_data_path() -> PathBuf {
-    if let Ok(workspace) = std::env::var("BUILD_WORKSPACE_DIRECTORY") {
+fn resolve_data_path(cli_path: Option<PathBuf>) -> PathBuf {
+    if let Some(path) = cli_path {
+        path
+    } else if let Ok(workspace) = std::env::var("BUILD_WORKSPACE_DIRECTORY") {
         PathBuf::from(workspace).join("src/books/data.toml")
     } else {
         eprintln!("can't find data.toml");
@@ -138,14 +140,18 @@ fn show_current(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
-    let data_path = resolve_data_path();
 
     match cli.command {
-        Some(Commands::Ratings) | None => {
+        Some(Commands::Ratings) => {
+            let data_path = resolve_data_path(cli.data_path);
             show_ratings_distribution(&data_path)?;
         }
         Some(Commands::Current) => {
+            let data_path = resolve_data_path(cli.data_path);
             show_current(&data_path)?;
+        }
+        None => {
+            Cli::command().print_help()?;
         }
     }
 
