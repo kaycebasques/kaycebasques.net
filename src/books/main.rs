@@ -19,6 +19,64 @@ enum Commands {
     Ratings,
     /// Print current message
     Current,
+    /// End reading a book
+    End {
+        /// ISBN of the book
+        #[arg(long)]
+        isbn: String,
+
+        /// Rating for the book (0-10)
+        #[arg(long)]
+        rating: i64,
+
+        /// Optional progress percentage (0-100, defaults to 100)
+        #[arg(long, default_value_t = 100)]
+        progress: i64,
+
+        /// Optional notes
+        #[arg(long)]
+        notes: Option<String>,
+
+        /// Optional end date in YYYYMMDD format (defaults to today)
+        #[arg(long)]
+        date: Option<String>,
+    },
+}
+
+#[repr(C)]
+struct Tm {
+    tm_sec: i32,
+    tm_min: i32,
+    tm_hour: i32,
+    tm_mday: i32,
+    tm_mon: i32,
+    tm_year: i32,
+    tm_wday: i32,
+    tm_yday: i32,
+    tm_isdst: i32,
+    tm_gmtoff: i64,
+    tm_zone: *const i8,
+}
+
+extern "C" {
+    fn time(timep: *mut i64) -> i64;
+    fn localtime_r(timep: *const i64, result: *mut Tm) -> *mut Tm;
+}
+
+fn get_today_yyyymmdd() -> String {
+    let mut t = 0i64;
+    let mut tm = std::mem::MaybeUninit::<Tm>::zeroed();
+    unsafe {
+        time(&mut t);
+        localtime_r(&t, tm.as_mut_ptr());
+        let tm = tm.assume_init();
+        format!(
+            "{:04}{:02}{:02}",
+            1900 + tm.tm_year,
+            1 + tm.tm_mon,
+            tm.tm_mday
+        )
+    }
 }
 
 fn resolve_data_path() -> PathBuf {
@@ -131,6 +189,151 @@ fn show_current(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+fn end_book(
+    data_path: &Path,
+    isbn: &str,
+    rating: i64,
+    progress: i64,
+    notes: Option<&str>,
+    end_date: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+    if !data_path.exists() {
+        eprintln!(
+            "Error: Could not locate data.toml at '{}'.",
+            data_path.display()
+        );
+        std::process::exit(1);
+    }
+
+    let content = fs::read_to_string(data_path)?;
+    let val: toml::Value = toml::from_str(&content)?;
+    let table = val.as_table().ok_or("Root TOML is not a table")?;
+
+    let book_item = match table.get(isbn) {
+        Some(item) => item.as_table().ok_or("Book entry is not a table")?,
+        None => {
+            eprintln!(
+                "Error: ISBN '{}' not found in currently reading books.",
+                isbn
+            );
+            std::process::exit(1);
+        }
+    };
+
+    let mut active_start_date: Option<String> = None;
+    for (key, subval) in book_item {
+        if let Some(session_table) = subval.as_table() {
+            let is_start_date = key != "a" && key.chars().all(|c| c.is_ascii_digit());
+            if is_start_date && session_table.get("end").is_none() {
+                active_start_date = Some(key.clone());
+                break;
+            }
+        }
+    }
+
+    let start_date = match active_start_date {
+        Some(d) => d,
+        None => {
+            eprintln!(
+                "Error: ISBN '{}' not found in currently reading books.",
+                isbn
+            );
+            std::process::exit(1);
+        }
+    };
+
+    let target_header = format!("[{}.{}]", isbn, start_date);
+    let header_pos = match content.find(&target_header) {
+        Some(pos) => pos,
+        None => {
+            eprintln!(
+                "Error: Could not locate section header '{}' in data.toml.",
+                target_header
+            );
+            std::process::exit(1);
+        }
+    };
+
+    let after_header = header_pos + target_header.len();
+    let next_header_pos = content[after_header..].find("\n[").map(|pos| after_header + pos + 1);
+
+    let mut new_section = format!(
+        "{}\nend = \"{}\"\nprogress = {}\nrating = {}",
+        target_header, end_date, progress, rating
+    );
+    if let Some(n) = notes {
+        let trimmed = n.trim();
+        if !trimmed.is_empty() {
+            new_section.push_str(&format!("\nnotes = \"\"\"\n{}\n\"\"\"", trimmed));
+        }
+    }
+
+    let mut new_content = String::new();
+    new_content.push_str(&content[..header_pos]);
+    new_content.push_str(&new_section);
+
+    if let Some(next_pos) = next_header_pos {
+        new_content.push_str("\n\n");
+        new_content.push_str(content[next_pos..].trim_start_matches('\n'));
+    } else {
+        new_content.push('\n');
+    }
+
+    // Validate that new_content parses as valid TOML
+    let _: toml::Value = toml::from_str(&new_content)?;
+
+    fs::write(data_path, new_content)?;
+
+    Ok(())
+}
+
+fn handle_end(
+    data_path: &Path,
+    isbn: String,
+    rating: i64,
+    progress: i64,
+    notes: Option<String>,
+    date_opt: Option<String>,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let isbn = isbn.trim().to_string();
+    if isbn.is_empty() {
+        eprintln!("Error: isbn cannot be empty.");
+        std::process::exit(1);
+    }
+
+    if !(0..=10).contains(&rating) {
+        eprintln!(
+            "Error: rating must be an integer between 0 and 10, got {}.",
+            rating
+        );
+        std::process::exit(1);
+    }
+
+    if !(0..=100).contains(&progress) {
+        eprintln!(
+            "Error: progress must be an integer between 0 and 100, got {}.",
+            progress
+        );
+        std::process::exit(1);
+    }
+
+    let date = match date_opt {
+        Some(d) => {
+            let d = d.trim().to_string();
+            if d.len() != 8 || !d.chars().all(|c| c.is_ascii_digit()) {
+                eprintln!("Error: date must be in YYYYMMDD format, got '{}'.", d);
+                std::process::exit(1);
+            }
+            d
+        }
+        None => get_today_yyyymmdd(),
+    };
+
+    end_book(data_path, &isbn, rating, progress, notes.as_deref(), &date)?;
+
+    Ok(())
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
@@ -142,6 +345,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Some(Commands::Current) => {
             let data_path = resolve_data_path();
             show_current(&data_path)?;
+        }
+        Some(Commands::End {
+            isbn,
+            rating,
+            progress,
+            notes,
+            date,
+        }) => {
+            let data_path = resolve_data_path();
+            handle_end(&data_path, isbn, rating, progress, notes, date)?;
         }
         None => {
             Cli::command().print_help()?;
