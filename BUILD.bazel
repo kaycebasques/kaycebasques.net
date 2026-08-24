@@ -7,3 +7,8 @@ alias(
     name = "dev",
     actual = "//src:src.serve",
 )
+
+alias(
+    name = "books",
+    actual = "//src/books:books",
+)
