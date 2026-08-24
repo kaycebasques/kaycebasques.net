@@ -631,6 +631,12 @@ authors = ["Frank Herbert"]
 progress = 100
 rating = 6
 
+[9780691168487]
+title = "e: The story of a number"
+
+[9780691168487.20260817]
+progress = 0
+
 [9780785199786]
 title = "End of Games"
 authors = ["Kieron Gillen"]
