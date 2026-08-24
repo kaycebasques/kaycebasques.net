@@ -19,6 +19,20 @@ enum Commands {
     Ratings,
     /// Print current message
     Current,
+    /// Start reading a book
+    Start {
+        /// ISBN of the book
+        #[arg(long)]
+        isbn: String,
+
+        /// Title of the book
+        #[arg(long)]
+        title: String,
+
+        /// Optional start date in YYYYMMDD format (defaults to today)
+        #[arg(long)]
+        date: Option<String>,
+    },
     /// End reading a book
     End {
         /// ISBN of the book
@@ -334,6 +348,180 @@ fn handle_end(
     Ok(())
 }
 
+fn find_insertion_pos(content: &str, new_title: &str) -> usize {
+    let val: Result<toml::Value, _> = toml::from_str(content);
+    if let Ok(toml::Value::Table(table)) = val {
+        let mut books: Vec<(String, String)> = Vec::new();
+        for (isbn, item) in &table {
+            if let Some(book_table) = item.as_table() {
+                if let Some(title) = book_table.get("title").and_then(|v| v.as_str()) {
+                    books.push((title.to_string(), isbn.clone()));
+                }
+            }
+        }
+        let new_lower = new_title.to_lowercase();
+        let mut cur_offset = 0;
+        for line in content.lines() {
+            let line_len = line.len() + 1; // +1 for newline
+            let trimmed = line.trim();
+            if trimmed.starts_with('[') && trimmed.ends_with(']') && !trimmed.contains('.') {
+                let isbn = trimmed.trim_start_matches('[').trim_end_matches(']');
+                if let Some((title, _)) = books.iter().find(|(_, b_isbn)| b_isbn == isbn) {
+                    if title.to_lowercase() > new_lower {
+                        return cur_offset;
+                    }
+                }
+            }
+            cur_offset += line_len;
+        }
+    }
+    content.len()
+}
+
+fn start_book(
+    data_path: &Path,
+    isbn: &str,
+    title: &str,
+    start_date: &str,
+) -> Result<(), Box<dyn std::error::Error>> {
+    if !data_path.exists() {
+        eprintln!(
+            "Error: Could not locate data.toml at '{}'.",
+            data_path.display()
+        );
+        std::process::exit(1);
+    }
+
+    let content = fs::read_to_string(data_path)?;
+    let val: toml::Value = toml::from_str(&content)?;
+    let table = val.as_table().ok_or("Root TOML is not a table")?;
+
+    if let Some(book_item) = table.get(isbn).and_then(|v| v.as_table()) {
+        for (key, subval) in book_item {
+            if let Some(session_table) = subval.as_table() {
+                let is_start_date = key != "a" && key.chars().all(|c| c.is_ascii_digit());
+                if is_start_date && session_table.get("end").is_none() {
+                    eprintln!(
+                        "Error: ISBN '{}' is already in progress.",
+                        isbn
+                    );
+                    std::process::exit(1);
+                }
+            }
+        }
+        if book_item.get(start_date).is_some() {
+            eprintln!(
+                "Error: A session for ISBN '{}' with date '{}' already exists.",
+                isbn, start_date
+            );
+            std::process::exit(1);
+        }
+    }
+
+    let escaped_title = title.replace('\\', "\\\\").replace('"', "\\\"");
+    let target_header = format!("[{}]", isbn);
+
+    let new_content = if let Some(header_pos) = content.find(&target_header) {
+        let session_prefix = format!("\n[{}.", isbn);
+        let mut cur_pos = header_pos + target_header.len();
+        let next_book_pos = loop {
+            match content[cur_pos..].find("\n[") {
+                Some(p) => {
+                    let match_pos = cur_pos + p;
+                    if content[match_pos..].starts_with(&session_prefix) {
+                        cur_pos = match_pos + 2;
+                    } else {
+                        break Some(match_pos + 1);
+                    }
+                }
+                None => break None,
+            }
+        };
+
+        let new_session = format!("[{}.{}]\nprogress = 0", isbn, start_date);
+        let mut result = String::new();
+        if let Some(next_pos) = next_book_pos {
+            result.push_str(content[..next_pos].trim_end());
+            result.push_str("\n\n");
+            result.push_str(&new_session);
+            result.push_str("\n\n");
+            result.push_str(content[next_pos..].trim_start_matches('\n'));
+        } else {
+            result.push_str(content.trim_end());
+            result.push_str("\n\n");
+            result.push_str(&new_session);
+            result.push('\n');
+        }
+        result
+    } else {
+        let insert_pos = find_insertion_pos(&content, title);
+        let new_block = format!(
+            "[{}]\ntitle = \"{}\"\n\n[{}.{}]\nprogress = 0",
+            isbn, escaped_title, isbn, start_date
+        );
+
+        let mut result = String::new();
+        if insert_pos < content.len() {
+            result.push_str(content[..insert_pos].trim_end());
+            if !result.is_empty() {
+                result.push_str("\n\n");
+            }
+            result.push_str(&new_block);
+            result.push_str("\n\n");
+            result.push_str(content[insert_pos..].trim_start_matches('\n'));
+        } else {
+            result.push_str(content.trim_end());
+            if !result.is_empty() {
+                result.push_str("\n\n");
+            }
+            result.push_str(&new_block);
+            result.push('\n');
+        }
+        result
+    };
+
+    let _: toml::Value = toml::from_str(&new_content)?;
+
+    fs::write(data_path, new_content)?;
+
+    Ok(())
+}
+
+fn handle_start(
+    data_path: &Path,
+    isbn: String,
+    title: String,
+    date_opt: Option<String>,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let isbn = isbn.trim().to_string();
+    if isbn.is_empty() {
+        eprintln!("Error: isbn cannot be empty.");
+        std::process::exit(1);
+    }
+
+    let title = title.trim().to_string();
+    if title.is_empty() {
+        eprintln!("Error: title cannot be empty.");
+        std::process::exit(1);
+    }
+
+    let date = match date_opt {
+        Some(d) => {
+            let d = d.trim().to_string();
+            if d.len() != 8 || !d.chars().all(|c| c.is_ascii_digit()) {
+                eprintln!("Error: date must be in YYYYMMDD format, got '{}'.", d);
+                std::process::exit(1);
+            }
+            d
+        }
+        None => get_today_yyyymmdd(),
+    };
+
+    start_book(data_path, &isbn, &title, &date)?;
+
+    Ok(())
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let cli = Cli::parse();
 
@@ -345,6 +533,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Some(Commands::Current) => {
             let data_path = resolve_data_path();
             show_current(&data_path)?;
+        }
+        Some(Commands::Start { isbn, title, date }) => {
+            let data_path = resolve_data_path();
+            handle_start(&data_path, isbn, title, date)?;
         }
         Some(Commands::End {
             isbn,
