@@ -6,14 +6,9 @@ use std::path::{Path, PathBuf};
 #[derive(Parser)]
 #[command(
     name = "books",
-    about = "Manage book data in src/books/data.toml",
-    version = "0.1.0"
+    about = "Manage book data in src/books/data.toml"
 )]
 struct Cli {
-    /// Path to data.toml (auto-resolved from workspace if not specified)
-    #[arg(long, short = 'd')]
-    data_path: Option<PathBuf>,
-
     #[command(subcommand)]
     command: Option<Commands>,
 }
@@ -26,10 +21,8 @@ enum Commands {
     Current,
 }
 
-fn resolve_data_path(cli_path: Option<PathBuf>) -> PathBuf {
-    if let Some(path) = cli_path {
-        path
-    } else if let Ok(workspace) = std::env::var("BUILD_WORKSPACE_DIRECTORY") {
+fn resolve_data_path() -> PathBuf {
+    if let Ok(workspace) = std::env::var("BUILD_WORKSPACE_DIRECTORY") {
         PathBuf::from(workspace).join("src/books/data.toml")
     } else {
         eprintln!("can't find data.toml");
@@ -40,7 +33,7 @@ fn resolve_data_path(cli_path: Option<PathBuf>) -> PathBuf {
 fn show_ratings_distribution(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
     if !data_path.exists() {
         eprintln!(
-            "Error: Could not locate data.toml at '{}'. Specify --data-path <path>.",
+            "Error: Could not locate data.toml at '{}'.",
             data_path.display()
         );
         std::process::exit(1);
@@ -99,7 +92,7 @@ fn show_ratings_distribution(data_path: &Path) -> Result<(), Box<dyn std::error:
 fn show_current(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
     if !data_path.exists() {
         eprintln!(
-            "Error: Could not locate data.toml at '{}'. Specify --data-path <path>.",
+            "Error: Could not locate data.toml at '{}'.",
             data_path.display()
         );
         std::process::exit(1);
@@ -143,11 +136,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     match cli.command {
         Some(Commands::Ratings) => {
-            let data_path = resolve_data_path(cli.data_path);
+            let data_path = resolve_data_path();
             show_ratings_distribution(&data_path)?;
         }
         Some(Commands::Current) => {
-            let data_path = resolve_data_path(cli.data_path);
+            let data_path = resolve_data_path();
             show_current(&data_path)?;
         }
         None => {
