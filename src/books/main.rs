@@ -2,6 +2,7 @@ use clap::{CommandFactory, Parser, Subcommand};
 use std::collections::BTreeMap;
 use std::fs;
 use std::path::{Path, PathBuf};
+use toml_edit::{DocumentMut, Item, Table};
 
 #[derive(Parser)]
 #[command(
@@ -112,17 +113,16 @@ fn show_ratings_distribution(data_path: &Path) -> Result<(), Box<dyn std::error:
     }
 
     let content = fs::read_to_string(data_path)?;
-    let val: toml::Value = toml::from_str(&content)?;
-    let table = val.as_table().ok_or("Root TOML is not a table")?;
+    let doc: DocumentMut = content.parse()?;
 
     let mut ratings = Vec::new();
     let mut rating_dist: BTreeMap<i64, usize> = BTreeMap::new();
 
-    for (_isbn, item) in table {
+    for (_isbn, item) in doc.iter() {
         if let Some(book_table) = item.as_table() {
             // Check all subtables for a rating
             let mut latest_rating: Option<i64> = None;
-            for (_key, subval) in book_table {
+            for (_key, subval) in book_table.iter() {
                 if let Some(session_table) = subval.as_table() {
                     if let Some(r) = session_table.get("rating").and_then(|v| v.as_integer()) {
                         latest_rating = Some(r);
@@ -171,23 +171,22 @@ fn show_current(data_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
     }
 
     let content = fs::read_to_string(data_path)?;
-    let val: toml::Value = toml::from_str(&content)?;
-    let table = val.as_table().ok_or("Root TOML is not a table")?;
+    let doc: DocumentMut = content.parse()?;
 
     let mut current_books = Vec::new();
 
-    for (isbn, item) in table {
+    for (isbn, item) in doc.iter() {
         if let Some(book_table) = item.as_table() {
             let title = book_table
                 .get("title")
                 .and_then(|v| v.as_str())
                 .unwrap_or("Unknown Title");
 
-            for (key, subval) in book_table {
+            for (key, subval) in book_table.iter() {
                 if let Some(session_table) = subval.as_table() {
                     let is_start_date = key != "a" && key.chars().all(|c| c.is_ascii_digit());
                     if is_start_date && session_table.get("end").is_none() {
-                        current_books.push((isbn.clone(), title.to_string()));
+                        current_books.push((isbn.to_string(), title.to_string()));
                     }
                 }
             }
@@ -220,11 +219,10 @@ fn end_book(
     }
 
     let content = fs::read_to_string(data_path)?;
-    let val: toml::Value = toml::from_str(&content)?;
-    let table = val.as_table().ok_or("Root TOML is not a table")?;
+    let mut doc: DocumentMut = content.parse()?;
 
-    let book_item = match table.get(isbn) {
-        Some(item) => item.as_table().ok_or("Book entry is not a table")?,
+    let book_item = match doc.get_mut(isbn).and_then(|i| i.as_table_like_mut()) {
+        Some(item) => item,
         None => {
             eprintln!(
                 "Error: ISBN '{}' not found in currently reading books.",
@@ -235,11 +233,11 @@ fn end_book(
     };
 
     let mut active_start_date: Option<String> = None;
-    for (key, subval) in book_item {
+    for (key, subval) in book_item.iter() {
         if let Some(session_table) = subval.as_table() {
             let is_start_date = key != "a" && key.chars().all(|c| c.is_ascii_digit());
             if is_start_date && session_table.get("end").is_none() {
-                active_start_date = Some(key.clone());
+                active_start_date = Some(key.to_string());
                 break;
             }
         }
@@ -256,47 +254,25 @@ fn end_book(
         }
     };
 
-    let target_header = format!("[{}.{}]", isbn, start_date);
-    let header_pos = match content.find(&target_header) {
-        Some(pos) => pos,
-        None => {
-            eprintln!(
-                "Error: Could not locate section header '{}' in data.toml.",
-                target_header
-            );
-            std::process::exit(1);
-        }
-    };
+    let session = book_item
+        .get_mut(&start_date)
+        .and_then(|i| i.as_table_like_mut())
+        .ok_or("Session entry is not a table")?;
 
-    let after_header = header_pos + target_header.len();
-    let next_header_pos = content[after_header..].find("\n[").map(|pos| after_header + pos + 1);
+    session.insert("end", toml_edit::value(end_date));
+    session.insert("progress", toml_edit::value(progress));
+    session.insert("rating", toml_edit::value(rating));
 
-    let mut new_section = format!(
-        "{}\nend = \"{}\"\nprogress = {}\nrating = {}",
-        target_header, end_date, progress, rating
-    );
     if let Some(n) = notes {
         let trimmed = n.trim();
         if !trimmed.is_empty() {
-            new_section.push_str(&format!("\nnotes = \"\"\"\n{}\n\"\"\"", trimmed));
+            let formatted_note = format!("\"\"\"\n{}\n\"\"\"", trimmed);
+            let note_value: toml_edit::Value = formatted_note.parse()?;
+            session.insert("notes", toml_edit::Item::Value(note_value));
         }
     }
 
-    let mut new_content = String::new();
-    new_content.push_str(&content[..header_pos]);
-    new_content.push_str(&new_section);
-
-    if let Some(next_pos) = next_header_pos {
-        new_content.push_str("\n\n");
-        new_content.push_str(content[next_pos..].trim_start_matches('\n'));
-    } else {
-        new_content.push('\n');
-    }
-
-    // Validate that new_content parses as valid TOML
-    let _: toml::Value = toml::from_str(&new_content)?;
-
-    fs::write(data_path, new_content)?;
+    fs::write(data_path, doc.to_string())?;
 
     Ok(())
 }
@@ -348,36 +324,6 @@ fn handle_end(
     Ok(())
 }
 
-fn find_insertion_pos(content: &str, new_title: &str) -> usize {
-    let val: Result<toml::Value, _> = toml::from_str(content);
-    if let Ok(toml::Value::Table(table)) = val {
-        let mut books: Vec<(String, String)> = Vec::new();
-        for (isbn, item) in &table {
-            if let Some(book_table) = item.as_table() {
-                if let Some(title) = book_table.get("title").and_then(|v| v.as_str()) {
-                    books.push((title.to_string(), isbn.clone()));
-                }
-            }
-        }
-        let new_lower = new_title.to_lowercase();
-        let mut cur_offset = 0;
-        for line in content.lines() {
-            let line_len = line.len() + 1; // +1 for newline
-            let trimmed = line.trim();
-            if trimmed.starts_with('[') && trimmed.ends_with(']') && !trimmed.contains('.') {
-                let isbn = trimmed.trim_start_matches('[').trim_end_matches(']');
-                if let Some((title, _)) = books.iter().find(|(_, b_isbn)| b_isbn == isbn) {
-                    if title.to_lowercase() > new_lower {
-                        return cur_offset;
-                    }
-                }
-            }
-            cur_offset += line_len;
-        }
-    }
-    content.len()
-}
-
 fn start_book(
     data_path: &Path,
     isbn: &str,
@@ -393,11 +339,10 @@ fn start_book(
     }
 
     let content = fs::read_to_string(data_path)?;
-    let val: toml::Value = toml::from_str(&content)?;
-    let table = val.as_table().ok_or("Root TOML is not a table")?;
+    let mut doc: DocumentMut = content.parse()?;
 
-    if let Some(book_item) = table.get(isbn).and_then(|v| v.as_table()) {
-        for (key, subval) in book_item {
+    if let Some(book_item) = doc.get(isbn).and_then(|v| v.as_table()) {
+        for (key, subval) in book_item.iter() {
             if let Some(session_table) = subval.as_table() {
                 let is_start_date = key != "a" && key.chars().all(|c| c.is_ascii_digit());
                 if is_start_date && session_table.get("end").is_none() {
@@ -418,71 +363,35 @@ fn start_book(
         }
     }
 
-    let escaped_title = title.replace('\\', "\\\\").replace('"', "\\\"");
-    let target_header = format!("[{}]", isbn);
-
-    let new_content = if let Some(header_pos) = content.find(&target_header) {
-        let session_prefix = format!("\n[{}.", isbn);
-        let mut cur_pos = header_pos + target_header.len();
-        let next_book_pos = loop {
-            match content[cur_pos..].find("\n[") {
-                Some(p) => {
-                    let match_pos = cur_pos + p;
-                    if content[match_pos..].starts_with(&session_prefix) {
-                        cur_pos = match_pos + 2;
-                    } else {
-                        break Some(match_pos + 1);
-                    }
-                }
-                None => break None,
-            }
-        };
-
-        let new_session = format!("[{}.{}]\nprogress = 0", isbn, start_date);
-        let mut result = String::new();
-        if let Some(next_pos) = next_book_pos {
-            result.push_str(content[..next_pos].trim_end());
-            result.push_str("\n\n");
-            result.push_str(&new_session);
-            result.push_str("\n\n");
-            result.push_str(content[next_pos..].trim_start_matches('\n'));
-        } else {
-            result.push_str(content.trim_end());
-            result.push_str("\n\n");
-            result.push_str(&new_session);
-            result.push('\n');
-        }
-        result
+    if let Some(book_item) = doc.get_mut(isbn).and_then(|v| v.as_table_like_mut()) {
+        let mut session_table = Table::new();
+        session_table.insert("progress", toml_edit::value(0));
+        book_item.insert(start_date, Item::Table(session_table));
     } else {
-        let insert_pos = find_insertion_pos(&content, title);
-        let new_block = format!(
-            "[{}]\ntitle = \"{}\"\n\n[{}.{}]\nprogress = 0",
-            isbn, escaped_title, isbn, start_date
-        );
+        let mut book_table = Table::new();
+        book_table.insert("title", toml_edit::value(title));
 
-        let mut result = String::new();
-        if insert_pos < content.len() {
-            result.push_str(content[..insert_pos].trim_end());
-            if !result.is_empty() {
-                result.push_str("\n\n");
-            }
-            result.push_str(&new_block);
-            result.push_str("\n\n");
-            result.push_str(content[insert_pos..].trim_start_matches('\n'));
-        } else {
-            result.push_str(content.trim_end());
-            if !result.is_empty() {
-                result.push_str("\n\n");
-            }
-            result.push_str(&new_block);
-            result.push('\n');
-        }
-        result
-    };
+        let mut session_table = Table::new();
+        session_table.insert("progress", toml_edit::value(0));
+        book_table.insert(start_date, Item::Table(session_table));
 
-    let _: toml::Value = toml::from_str(&new_content)?;
+        doc.insert(isbn, Item::Table(book_table));
+        doc.as_table_mut().sort_values_by(|k1, v1, k2, v2| {
+            let t1 = v1
+                .as_table()
+                .and_then(|t| t.get("title"))
+                .and_then(|v| v.as_str())
+                .unwrap_or(k1);
+            let t2 = v2
+                .as_table()
+                .and_then(|t| t.get("title"))
+                .and_then(|v| v.as_str())
+                .unwrap_or(k2);
+            t1.to_lowercase().cmp(&t2.to_lowercase())
+        });
+    }
 
-    fs::write(data_path, new_content)?;
+    fs::write(data_path, doc.to_string())?;
 
     Ok(())
 }
@@ -555,3 +464,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
+

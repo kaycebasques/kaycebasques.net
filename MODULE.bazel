@@ -27,6 +27,10 @@ crate.spec(
     package = "toml",
     version = "0.8",
 )
+crate.spec(
+    package = "toml_edit",
+    version = "0.22",
+)
 crate.from_specs()
 use_repo(crate, "crates")
 

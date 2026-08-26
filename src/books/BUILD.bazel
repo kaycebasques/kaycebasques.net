@@ -12,5 +12,6 @@ rust_binary(
         "@crates//:clap",
         "@crates//:serde",
         "@crates//:toml",
+        "@crates//:toml_edit",
     ],
 )
