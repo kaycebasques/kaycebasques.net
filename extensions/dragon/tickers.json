@@ -1,0 +1,87 @@
+{
+  "bcd": {
+    "url": "https://www.aberdeeninvestments.com/en-us/investor/funds/view-all-funds/-us0032612030",
+    "er": 0.3,
+    "ac": "commodities"
+  },
+  "bitw": {
+    "url": "https://bitwetp.com",
+    "er": 0.75,
+    "ac": "crypto"
+  },
+  "bwx": {
+    "url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-bloomberg-international-treasury-bond-etf-bwx",
+    "er": 0.35,
+    "ac": "bonds"
+  },
+  "caos": {
+    "url": "https://funds.alphaarchitect.com/caos/",
+    "er": 0.63,
+    "ac": "vol"
+  },
+  "cta": {
+    "url": "https://www.simplify.us/etfs/cta-simplify-managed-futures-strategy-etf",
+    "er": 0.75,
+    "ac": "managed_futures"
+  },
+  "dbmf": {
+    "url": "https://imgpfunds.com/dbmf-overview/",
+    "er": 0.85,
+    "ac": "managed_futures"
+  },
+  "emlc": {
+    "url": "https://www.vaneck.com/us/en/investments/emerging-markets-bond-etf-emlc/",
+    "er": 0.3,
+    "ac": "bonds"
+  },
+  "imf": {
+    "url": "https://www.invesco.com/us/financial-products/etfs/product-detail?ticker=IMF",
+    "er": 0.65,
+    "ac": "managed_futures"
+  },
+  "rsp": {
+    "url": "https://www.invesco.com/us/financial-products/etfs/product-detail?ticker=RSP",
+    "er": 0.2,
+    "ac": "equities"
+  },
+  "sgol": {
+    "url": "https://www.abrdn.com/en-us/investor/fund-centre/etf/sgol",
+    "er": 0.17,
+    "ac": "gold"
+  },
+  "stip": {
+    "url": "https://www.ishares.com/us/products/239458/ishares-05-year-tips-bond-etf",
+    "er": 0.03,
+    "ac": "tips"
+  },
+  "tlt": {
+    "url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
+    "er": 0.15,
+    "ac": "bonds"
+  },
+  "usdu": {
+    "url": "https://www.wisdomtree.com/investments/etfs/currency/usdu",
+    "er": 0.51,
+    "ac": "long_usd"
+  },
+  "vea": {
+    "url": "https://investor.vanguard.com/investment-products/etfs/profile/vea",
+    "er": 0.03,
+    "ac": "equities"
+  },
+  "vwo": {
+    "url": "https://investor.vanguard.com/investment-products/etfs/profile/vwo",
+    "er": 0.06,
+    "ac": "equities"
+  },
+  "vxf": {
+    "url": "https://investor.vanguard.com/investment-products/etfs/profile/vxf",
+    "er": 0.05,
+    "ac": "equities"
+  },
+  "wip": {
+    "url": "https://www.ssga.com/us/en/intermediary/etfs/spdr-ftse-international-government-inflation-protected-bond-etf-wip",
+    "er": 0.5,
+    "ac": "tips"
+  }
+}

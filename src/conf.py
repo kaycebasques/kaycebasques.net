@@ -8,6 +8,7 @@ exclude_patterns = ["BUILD.bazel"]
 # Extensions
 extensions = [
     "theme",
+    "dragon",
     "sitemap",
 ]
 

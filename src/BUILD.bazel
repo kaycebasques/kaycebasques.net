@@ -18,6 +18,7 @@ sphinx_build_binary(
     name = "sphinx",
     deps = [
         "//theme",
+        "//extensions/dragon",
         "//extensions/sitemap",
         "@pypi//sphinx",
     ],

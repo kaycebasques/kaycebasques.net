@@ -27,3 +27,76 @@ a {
 main {
   min-height: 60vh;
 }
+
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+caption {
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  padding: 0.2rem 0.75rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+th {
+  font-weight: 600;
+  border-bottom: 2px solid #ccc;
+}
+
+td p, th p {
+  margin: 0;
+}
+
+.portfolio-summary td:not(:first-child),
+.portfolio-summary th:not(:first-child),
+.portfolio-details td:nth-child(n+3),
+.portfolio-details th:nth-child(n+3) {
+  text-align: right;
+}
+
+tr.ac-commodities {
+  background-color: #fef9c3;
+}
+
+tr.ac-gold {
+  background-color: #fef08a;
+}
+
+tr.ac-crypto {
+  background-color: #ede9fe;
+}
+
+tr.ac-bonds {
+  background-color: #e0f2fe;
+}
+
+tr.ac-tips {
+  background-color: #dbeafe;
+}
+
+tr.ac-equities {
+  background-color: #dcfce7;
+}
+
+tr.ac-managed_futures,
+tr.ac-managed-futures {
+  background-color: #ffedd5;
+}
+
+tr.ac-vol,
+tr.ac-long_vol,
+tr.ac-tail-risk {
+  background-color: #fee2e2;
+}
+
+tr.ac-currencies,
+tr.ac-long_usd,
+tr.ac-long-usd {
+  background-color: #ccfbf1;
+}
