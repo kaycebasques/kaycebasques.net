@@ -4,10 +4,16 @@ release = "0.0.0"
 author = "Kayce Basques"
 copyright = f"2026, {author}"
 exclude_patterns = ["BUILD.bazel"]
-templates_path = ['_templates']
+
+# Extensions
+extensions = [
+    "theme",
+    "sitemap",
+]
 
 # HTML
-html_theme = 'basic'
+html_theme = "theme"
+html_baseurl = "https://kaycebasques.net"
 html_permalinks_icon = "§"
-html_short_title = 'kaycebasques.net'
-html_extra_path = ['extra']
+html_short_title = "kaycebasques.net"
+html_extra_path = ["extra"]

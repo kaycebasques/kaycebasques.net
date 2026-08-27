@@ -1,0 +1,29 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+header a {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  color: #0066cc;
+}
+
+main {
+  min-height: 60vh;
+}

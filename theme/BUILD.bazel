@@ -1,0 +1,34 @@
+load("@rules_python//python:defs.bzl", "py_library")
+load("@rules_python//python:packaging.bzl", "py_package", "py_wheel")
+
+py_library(
+    name = "theme",
+    srcs = ["__init__.py"],
+    data = [
+        "theme.toml",
+        "genindex.html",
+        "layout.html",
+        "page.html",
+        "search.html",
+        "static/theme.css",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+py_package(
+    name = "package",
+    packages = ["theme"],
+    deps = [":theme"],
+)
+
+py_wheel(
+    name = "wheel",
+    distribution = "theme",
+    version = "0.0.0",
+    entry_points = {
+        "sphinx.html_themes": [
+            "theme = theme",
+        ],
+    },
+    deps = [":package"],
+)

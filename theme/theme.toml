@@ -1,0 +1,5 @@
+[theme]
+inherit = "none"
+stylesheets = ["theme.css"]
+pygments_style = {default = "default", dark = "monokai"}
+sidebars = []
