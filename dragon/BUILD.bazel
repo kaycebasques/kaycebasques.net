@@ -1,0 +1,56 @@
+load("@pypi//:requirements.bzl", "requirement")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "chromium_files",
+    srcs = select({
+        "@platforms//os:linux": ["@playwright_chromium_linux_x64//:files"],
+        "@platforms//os:macos": ["@playwright_chromium_mac_arm64//:files"],
+        "//conditions:default": ["@playwright_chromium_linux_x64//:files"],
+    }),
+)
+
+py_library(
+    name = "helpers",
+    srcs = ["helpers.py"],
+    data = [":chromium_files"],
+    deps = [
+        requirement("playwright"),
+    ],
+)
+
+py_binary(
+    name = "dragon",
+    srcs = ["correlations.py"],
+    main = "correlations.py",
+    data = [":chromium_files"],
+    deps = [
+        ":helpers",
+        requirement("greenlet"),
+        requirement("playwright"),
+        requirement("pyee"),
+        requirement("typing_extensions"),
+    ],
+)
+
+alias(
+    name = "correlations",
+    actual = ":dragon",
+)
+
+py_test(
+    name = "correlations_test",
+    srcs = ["correlations_test.py"],
+    data = [":chromium_files"],
+    tags = ["local"],
+    deps = [
+        ":dragon",
+        ":helpers",
+        requirement("greenlet"),
+        requirement("playwright"),
+        requirement("pyee"),
+        requirement("typing_extensions"),
+    ],
+)

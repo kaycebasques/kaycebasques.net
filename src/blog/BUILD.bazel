@@ -9,9 +9,10 @@ sphinx_docs_library(
         "2026/04/tapestry/index.rst",
         "2026/07/heap/index.rst",
         "2026/08/dragon/index.rst",
+        "2026/08/dragon/correlations/index.rst",
         # sentinel
         "index.rst",
-    ],
+    ] + glob(["**/*.png"]),
     prefix = "blog/",
     visibility = ["//visibility:public"],
     deps = [
