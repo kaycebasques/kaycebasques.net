@@ -31,157 +31,129 @@ def format_asset_class(ac: str | None) -> str:
     return ac.replace("_", " ").title()
 
 
-class PortfolioDirective(Directive):
+def load_data(directive: Directive) -> tuple[dict, dict, int] | nodes.Node:
+    date = directive.arguments[0].strip()
+    snapshots_path = Path(__file__).parent / "snapshots.json"
+
+    try:
+        with open(snapshots_path, "r", encoding="utf-8") as f:
+            snapshots = json.load(f)
+    except Exception as e:
+        return directive.state_machine.reporter.error(
+            f"Failed to read snapshots.json: {e}",
+            line=directive.lineno,
+        )
+
+    if date not in snapshots:
+        return directive.state_machine.reporter.error(
+            f"Snapshot not found for date: {date}",
+            line=directive.lineno,
+        )
+
+    data = snapshots[date]
+    total = sum(data.values())
+
+    tickers_path = Path(__file__).parent / "tickers.json"
+    tickers_meta = {}
+    if tickers_path.exists():
+        try:
+            with open(tickers_path, "r", encoding="utf-8") as f:
+                tickers_meta = json.load(f)
+        except Exception:
+            pass
+
+    return data, tickers_meta, total, date
+
+
+def build_snapshot_table(data: dict, tickers_meta: dict, total: int, date: str) -> nodes.table:
+    ac_totals: dict[str, int] = {}
+    ac_tickers: dict[str, list[str]] = {}
+    for ticker, val in data.items():
+        meta = tickers_meta.get(ticker.lower()) or tickers_meta.get(ticker.upper()) or {}
+        ac = meta.get("ac", "other")
+        ac_totals[ac] = ac_totals.get(ac, 0) + val
+        ac_tickers.setdefault(ac, []).append(ticker)
+
+    table = nodes.table(classes=["portfolio-snapshot"])
+    table += nodes.title(text=f"Snapshot ({date})")
+    tgroup = nodes.tgroup(cols=4)
+    table += tgroup
+
+    tgroup += nodes.colspec(colwidth=1)
+    tgroup += nodes.colspec(colwidth=1)
+    tgroup += nodes.colspec(colwidth=1)
+    tgroup += nodes.colspec(colwidth=1)
+
+    thead = nodes.thead()
+    tgroup += thead
+    head_row = nodes.row()
+    thead += head_row
+
+    for header in ["Asset Class", "Constituents", "Value", "Weight"]:
+        entry = nodes.entry()
+        entry += nodes.paragraph(text=header)
+        head_row += entry
+
+    tbody = nodes.tbody()
+    tgroup += tbody
+
+    for ac, ac_val in ac_totals.items():
+        ac_slug = ac.strip().lower().replace(" ", "_")
+        row = nodes.row(classes=[f"ac-{ac_slug}"])
+        tbody += row
+
+        entry_ac = nodes.entry()
+        entry_ac += nodes.paragraph(text=format_asset_class(ac))
+        row += entry_ac
+
+        entry_tickers = nodes.entry()
+        p_tickers = nodes.paragraph()
+        tickers_list = ac_tickers.get(ac, [])
+        for i, ticker_name in enumerate(tickers_list):
+            if i > 0:
+                p_tickers += nodes.inline(text=", ")
+            t_meta = tickers_meta.get(ticker_name.lower()) or tickers_meta.get(ticker_name.upper()) or {}
+            t_url = t_meta.get("url")
+            if t_url:
+                p_tickers += nodes.reference(text=str(ticker_name), refuri=t_url)
+            else:
+                p_tickers += nodes.inline(text=str(ticker_name))
+            t_val = data.get(ticker_name, 0)
+            t_weight = (t_val / total * 100) if total else 0
+            t_weight_str = f"{round(t_weight, 1):g}%"
+            p_tickers += nodes.inline(text=f" ({t_weight_str})")
+        entry_tickers += p_tickers
+        row += entry_tickers
+
+        entry_val = nodes.entry()
+        entry_val += nodes.paragraph(text=str(ac_val))
+        row += entry_val
+
+        weight = (ac_val / total * 100) if total else 0
+        weight_str = f"{round(weight, 1):g}%"
+        entry_weight = nodes.entry()
+        entry_weight += nodes.paragraph(text=weight_str)
+        row += entry_weight
+
+    return table
+
+
+class SnapshotDirective(Directive):
     has_content = False
     required_arguments = 1
     optional_arguments = 0
     final_argument_whitespace = False
 
     def run(self) -> list[nodes.Node]:
-        date = self.arguments[0].strip()
-        snapshots_path = Path(__file__).parent / "snapshots.json"
-
-        try:
-            with open(snapshots_path, "r", encoding="utf-8") as f:
-                snapshots = json.load(f)
-        except Exception as e:
-            error = self.state_machine.reporter.error(
-                f"Failed to read snapshots.json: {e}",
-                line=self.lineno,
-            )
-            return [error]
-
-        if date not in snapshots:
-            error = self.state_machine.reporter.error(
-                f"Snapshot not found for date: {date}",
-                line=self.lineno,
-            )
-            return [error]
-
-        data = snapshots[date]
-        total = sum(data.values())
-
-        tickers_path = Path(__file__).parent / "tickers.json"
-        tickers_meta = {}
-        if tickers_path.exists():
-            try:
-                with open(tickers_path, "r", encoding="utf-8") as f:
-                    tickers_meta = json.load(f)
-            except Exception:
-                pass
-
-        # Summary table by asset class
-        ac_totals: dict[str, int] = {}
-        for ticker, val in data.items():
-            meta = tickers_meta.get(ticker.lower()) or tickers_meta.get(ticker.upper()) or {}
-            ac = meta.get("ac", "other")
-            ac_totals[ac] = ac_totals.get(ac, 0) + val
-
-        summary_table = nodes.table(classes=["portfolio-summary"])
-        summary_table += nodes.title(text="Summary")
-        s_tgroup = nodes.tgroup(cols=3)
-        summary_table += s_tgroup
-
-        s_tgroup += nodes.colspec(colwidth=1)
-        s_tgroup += nodes.colspec(colwidth=1)
-        s_tgroup += nodes.colspec(colwidth=1)
-
-        s_thead = nodes.thead()
-        s_tgroup += s_thead
-        s_head_row = nodes.row()
-        s_thead += s_head_row
-
-        for header in ["Asset Class", "Value", "Weight"]:
-            entry = nodes.entry()
-            entry += nodes.paragraph(text=header)
-            s_head_row += entry
-
-        s_tbody = nodes.tbody()
-        s_tgroup += s_tbody
-
-        for ac, ac_val in ac_totals.items():
-            ac_slug = ac.strip().lower().replace(" ", "_")
-            row = nodes.row(classes=[f"ac-{ac_slug}"])
-            s_tbody += row
-
-            entry_ac = nodes.entry()
-            entry_ac += nodes.paragraph(text=format_asset_class(ac))
-            row += entry_ac
-
-            entry_val = nodes.entry()
-            entry_val += nodes.paragraph(text=str(ac_val))
-            row += entry_val
-
-            weight = (ac_val / total * 100) if total else 0
-            weight_str = f"{round(weight, 1):g}%"
-            entry_weight = nodes.entry()
-            entry_weight += nodes.paragraph(text=weight_str)
-            row += entry_weight
-
-        # Detailed ticker table
-        ticker_table = nodes.table(classes=["portfolio-details"])
-        ticker_table += nodes.title(text="Details")
-        tgroup = nodes.tgroup(cols=4)
-        ticker_table += tgroup
-
-        tgroup += nodes.colspec(colwidth=1)
-        tgroup += nodes.colspec(colwidth=1)
-        tgroup += nodes.colspec(colwidth=1)
-        tgroup += nodes.colspec(colwidth=1)
-
-        thead = nodes.thead()
-        tgroup += thead
-        head_row = nodes.row()
-        thead += head_row
-
-        for header in ["Ticker", "Asset Class", "Value", "Weight"]:
-            entry = nodes.entry()
-            entry += nodes.paragraph(text=header)
-            head_row += entry
-
-        tbody = nodes.tbody()
-        tgroup += tbody
-
-        for ticker, val in data.items():
-            meta = tickers_meta.get(ticker.lower()) or tickers_meta.get(ticker.upper()) or {}
-            row_classes = []
-            ac = meta.get("ac")
-            if ac:
-                ac_slug = ac.strip().lower().replace(" ", "_")
-                row_classes.append(f"ac-{ac_slug}")
-
-            row = nodes.row(classes=row_classes)
-            tbody += row
-
-            entry_ticker = nodes.entry()
-            p_ticker = nodes.paragraph()
-            url = meta.get("url")
-            if url:
-                p_ticker += nodes.reference(text=str(ticker), refuri=url)
-            else:
-                p_ticker += nodes.inline(text=str(ticker))
-            entry_ticker += p_ticker
-            row += entry_ticker
-
-            entry_ac = nodes.entry()
-            entry_ac += nodes.paragraph(text=format_asset_class(ac))
-            row += entry_ac
-
-            entry_val = nodes.entry()
-            entry_val += nodes.paragraph(text=str(val))
-            row += entry_val
-
-            weight = (val / total * 100) if total else 0
-            weight_str = f"{round(weight, 1):g}%"
-            entry_weight = nodes.entry()
-            entry_weight += nodes.paragraph(text=weight_str)
-            row += entry_weight
-
-        return [summary_table, ticker_table]
+        res = load_data(self)
+        if isinstance(res, nodes.Node):
+            return [res]
+        data, tickers_meta, total, date = res
+        return [build_snapshot_table(data, tickers_meta, total, date)]
 
 
 def setup(app: Sphinx) -> dict[str, bool]:
-    app.add_directive("portfolio", PortfolioDirective)
+    app.add_directive("snapshot", SnapshotDirective)
     return {
         "parallel_read_safe": True,
         "parallel_write_safe": True,

@@ -53,10 +53,8 @@ td p, th p {
   margin: 0;
 }
 
-.portfolio-summary td:not(:first-child),
-.portfolio-summary th:not(:first-child),
-.portfolio-details td:nth-child(n+3),
-.portfolio-details th:nth-child(n+3) {
+td:nth-child(n+3),
+th:nth-child(n+3) {
   text-align: right;
 }
 

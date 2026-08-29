@@ -2,4 +2,5 @@
 Dragon
 ======
 
-.. portfolio:: 20260820
+.. snapshot:: 20260820
+
