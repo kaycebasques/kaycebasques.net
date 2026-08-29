@@ -17,6 +17,16 @@ BCD vs BWX
 
 .. image:: BCD-BWX.png
 
+BCD vs CAOS
+-----------
+
+.. image:: BCD-CAOS.png
+
+BCD vs CTA
+----------
+
+.. image:: BCD-CTA.png
+
 BCD vs DBMF
 -----------
 
@@ -75,7 +85,7 @@ BCD vs WIP
 BITW
 ====
 
-Proxy: IBIT
+Proxy: BITO
 
 BITW vs BCD
 -----------
@@ -86,6 +96,16 @@ BITW vs BWX
 -----------
 
 .. image:: BITW-BWX.png
+
+BITW vs CAOS
+------------
+
+.. image:: BITW-CAOS.png
+
+BITW vs CTA
+-----------
+
+.. image:: BITW-CTA.png
 
 BITW vs DBMF
 ------------
@@ -155,6 +175,16 @@ BWX vs BITW
 
 .. image:: BITW-BWX.png
 
+BWX vs CAOS
+-----------
+
+.. image:: BWX-CAOS.png
+
+BWX vs CTA
+----------
+
+.. image:: BWX-CTA.png
+
 BWX vs DBMF
 -----------
 
@@ -210,6 +240,162 @@ BWX vs WIP
 
 .. image:: BWX-WIP.png
 
+CAOS
+====
+
+CAOS vs BCD
+-----------
+
+.. image:: BCD-CAOS.png
+
+CAOS vs BITW
+------------
+
+.. image:: BITW-CAOS.png
+
+CAOS vs BWX
+-----------
+
+.. image:: BWX-CAOS.png
+
+CAOS vs CTA
+-----------
+
+.. image:: CAOS-CTA.png
+
+CAOS vs DBMF
+------------
+
+.. image:: CAOS-DBMF.png
+
+CAOS vs EMLC
+------------
+
+.. image:: CAOS-EMLC.png
+
+CAOS vs RSP
+-----------
+
+.. image:: CAOS-RSP.png
+
+CAOS vs SGOL
+------------
+
+.. image:: CAOS-SGOL.png
+
+CAOS vs STIP
+------------
+
+.. image:: CAOS-STIP.png
+
+CAOS vs TLT
+-----------
+
+.. image:: CAOS-TLT.png
+
+CAOS vs USDU
+------------
+
+.. image:: CAOS-USDU.png
+
+CAOS vs VEA
+-----------
+
+.. image:: CAOS-VEA.png
+
+CAOS vs VWO
+-----------
+
+.. image:: CAOS-VWO.png
+
+CAOS vs VXF
+-----------
+
+.. image:: CAOS-VXF.png
+
+CAOS vs WIP
+-----------
+
+.. image:: CAOS-WIP.png
+
+CTA
+===
+
+CTA vs BCD
+----------
+
+.. image:: BCD-CTA.png
+
+CTA vs BITW
+-----------
+
+.. image:: BITW-CTA.png
+
+CTA vs BWX
+----------
+
+.. image:: BWX-CTA.png
+
+CTA vs CAOS
+-----------
+
+.. image:: CAOS-CTA.png
+
+CTA vs DBMF
+-----------
+
+.. image:: CTA-DBMF.png
+
+CTA vs EMLC
+-----------
+
+.. image:: CTA-EMLC.png
+
+CTA vs RSP
+----------
+
+.. image:: CTA-RSP.png
+
+CTA vs SGOL
+-----------
+
+.. image:: CTA-SGOL.png
+
+CTA vs STIP
+-----------
+
+.. image:: CTA-STIP.png
+
+CTA vs TLT
+----------
+
+.. image:: CTA-TLT.png
+
+CTA vs USDU
+-----------
+
+.. image:: CTA-USDU.png
+
+CTA vs VEA
+----------
+
+.. image:: CTA-VEA.png
+
+CTA vs VWO
+----------
+
+.. image:: CTA-VWO.png
+
+CTA vs VXF
+----------
+
+.. image:: CTA-VXF.png
+
+CTA vs WIP
+----------
+
+.. image:: CTA-WIP.png
+
 DBMF
 ====
 
@@ -227,6 +413,16 @@ DBMF vs BWX
 -----------
 
 .. image:: BWX-DBMF.png
+
+DBMF vs CAOS
+------------
+
+.. image:: CAOS-DBMF.png
+
+DBMF vs CTA
+-----------
+
+.. image:: CTA-DBMF.png
 
 DBMF vs EMLC
 ------------
@@ -296,6 +492,16 @@ EMLC vs BWX
 
 .. image:: BWX-EMLC.png
 
+EMLC vs CAOS
+------------
+
+.. image:: CAOS-EMLC.png
+
+EMLC vs CTA
+-----------
+
+.. image:: CTA-EMLC.png
+
 EMLC vs DBMF
 ------------
 
@@ -363,6 +569,16 @@ RSP vs BWX
 ----------
 
 .. image:: BWX-RSP.png
+
+RSP vs CAOS
+-----------
+
+.. image:: CAOS-RSP.png
+
+RSP vs CTA
+----------
+
+.. image:: CTA-RSP.png
 
 RSP vs DBMF
 -----------
@@ -432,6 +648,16 @@ SGOL vs BWX
 
 .. image:: BWX-SGOL.png
 
+SGOL vs CAOS
+------------
+
+.. image:: CAOS-SGOL.png
+
+SGOL vs CTA
+-----------
+
+.. image:: CTA-SGOL.png
+
 SGOL vs DBMF
 ------------
 
@@ -499,6 +725,16 @@ STIP vs BWX
 -----------
 
 .. image:: BWX-STIP.png
+
+STIP vs CAOS
+------------
+
+.. image:: CAOS-STIP.png
+
+STIP vs CTA
+-----------
+
+.. image:: CTA-STIP.png
 
 STIP vs DBMF
 ------------
@@ -568,6 +804,16 @@ TLT vs BWX
 
 .. image:: BWX-TLT.png
 
+TLT vs CAOS
+-----------
+
+.. image:: CAOS-TLT.png
+
+TLT vs CTA
+----------
+
+.. image:: CTA-TLT.png
+
 TLT vs DBMF
 -----------
 
@@ -635,6 +881,16 @@ USDU vs BWX
 -----------
 
 .. image:: BWX-USDU.png
+
+USDU vs CAOS
+------------
+
+.. image:: CAOS-USDU.png
+
+USDU vs CTA
+-----------
+
+.. image:: CTA-USDU.png
 
 USDU vs DBMF
 ------------
@@ -704,6 +960,16 @@ VEA vs BWX
 
 .. image:: BWX-VEA.png
 
+VEA vs CAOS
+-----------
+
+.. image:: CAOS-VEA.png
+
+VEA vs CTA
+----------
+
+.. image:: CTA-VEA.png
+
 VEA vs DBMF
 -----------
 
@@ -771,6 +1037,16 @@ VWO vs BWX
 ----------
 
 .. image:: BWX-VWO.png
+
+VWO vs CAOS
+-----------
+
+.. image:: CAOS-VWO.png
+
+VWO vs CTA
+----------
+
+.. image:: CTA-VWO.png
 
 VWO vs DBMF
 -----------
@@ -840,6 +1116,16 @@ VXF vs BWX
 
 .. image:: BWX-VXF.png
 
+VXF vs CAOS
+-----------
+
+.. image:: CAOS-VXF.png
+
+VXF vs CTA
+----------
+
+.. image:: CTA-VXF.png
+
 VXF vs DBMF
 -----------
 
@@ -907,6 +1193,16 @@ WIP vs BWX
 ----------
 
 .. image:: BWX-WIP.png
+
+WIP vs CAOS
+-----------
+
+.. image:: CAOS-WIP.png
+
+WIP vs CTA
+----------
+
+.. image:: CTA-WIP.png
 
 WIP vs DBMF
 -----------
