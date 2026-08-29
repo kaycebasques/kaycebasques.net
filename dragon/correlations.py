@@ -217,13 +217,9 @@ def generate_rst_index(
     lines.append("")
 
     for t1 in tickers:
-        p1 = tickers_map.get(t1)
         lines.append(t1)
         lines.append("=" * len(t1))
         lines.append("")
-        if p1:
-            lines.append(f"Proxy: {p1}")
-            lines.append("")
 
         for t2 in tickers:
             if t1 == t2:
@@ -233,6 +229,14 @@ def generate_rst_index(
             lines.append(sub_header)
             lines.append("-" * len(sub_header))
             lines.append("")
+            p1 = tickers_map.get(t1)
+            if p1:
+                lines.append(f"{t1} proxy: {p1}")
+                lines.append("")
+            p2 = tickers_map.get(t2)
+            if p2:
+                lines.append(f"{t2} proxy: {p2}")
+                lines.append("")
             lines.append(f".. image:: {pair_name}")
             lines.append("")
 
