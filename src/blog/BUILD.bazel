@@ -12,7 +12,7 @@ sphinx_docs_library(
         "2026/08/dragon/correlations/index.rst",
         # sentinel
         "index.rst",
-    ] + glob(["**/*.png"]),
+    ] + glob(["**/*.png", "**/*.pdf"]),
     prefix = "blog/",
     visibility = ["//visibility:public"],
     deps = [

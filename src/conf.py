@@ -10,6 +10,12 @@ extensions = [
     "theme",
     "dragon",
     "sitemap",
+    "cp",
+]
+
+# Copy
+cp = [
+    "pdf",
 ]
 
 # HTML
