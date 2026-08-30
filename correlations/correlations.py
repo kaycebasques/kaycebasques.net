@@ -8,7 +8,7 @@ from pathlib import Path
 import sys
 from playwright.sync_api import Page, sync_playwright
 
-from dragon.helpers import launch_browser
+from correlations.helpers import launch_browser
 
 URL = "https://www.etfreplay.com/correlation.aspx"
 
@@ -24,114 +24,72 @@ def get_workspace_root() -> Path:
     return Path.cwd().resolve()
 
 
-def resolve_snapshot_file(target: str, workspace_root: Path | None = None) -> tuple[Path, Path]:
-    """Resolves actual snapshot path argument to (snapshot_file, output_correlations_dir).
+def resolve_correlations_file(target: str, workspace_root: Path | None = None) -> tuple[Path, Path]:
+    """Resolves correlations file path argument to (correlations_file, output_correlations_dir).
 
-    Handles paths such as:
-      - '//src/blog/2026/08/dragon/snapshot.json'
-      - 'src/blog/2026/08/dragon/snapshot.json'
-      - '/absolute/path/to/snapshot.json'
-      - 'src/blog/2026/08/dragon' (directory containing snapshot.json)
+    Requires path format starting with '//' representing the repository root, e.g.:
+      '//src/blog/2026/08/dragon/correlations.json'
     """
-    ws = workspace_root or get_workspace_root()
     clean = target.strip()
-    if clean.startswith("//"):
-        clean = clean[2:]
+    if not clean.startswith("//"):
+        raise ValueError(
+            f"Invalid path '{target}'. Path must start with '//' representing the repository root "
+            f"(e.g. '//src/blog/2026/08/dragon/correlations.json')."
+        )
 
-    p = Path(clean)
-    candidate_paths: list[Path] = []
-    if p.is_absolute():
-        candidate_paths.append(p)
-        candidate_paths.append(p / "snapshot.json")
-        candidate_paths.append(p / "snapshots.json")
-    else:
-        candidate_paths.append(ws / p)
-        candidate_paths.append(ws / p / "snapshot.json")
-        candidate_paths.append(ws / p / "snapshots.json")
-        candidate_paths.append(Path.cwd() / p)
-        candidate_paths.append(Path.cwd() / p / "snapshot.json")
+    ws = workspace_root or get_workspace_root()
+    relative_path = clean[2:]
+    correlations_file = (ws / relative_path).resolve()
 
-    for candidate in candidate_paths:
-        if candidate.is_file():
-            return candidate.resolve(), candidate.resolve().parent / "correlations"
+    if not correlations_file.is_file():
+        raise FileNotFoundError(f"Correlations file not found: {correlations_file}")
 
-    searched = [str(c) for c in candidate_paths]
-    raise FileNotFoundError(
-        f"Could not find snapshot file at target path '{target}'.\n"
-        f"Searched paths:\n  " + "\n  ".join(searched)
-    )
+    return correlations_file, correlations_file.parent / "correlations"
 
 
-def load_snapshot(snapshot_path: Path) -> tuple[dict[str, str | None], str | None, str | None]:
-    """Loads tickers (skipping ones with proxy: null) and snapshot date.
+def load_correlations(correlations_path: Path) -> dict[str, str | None]:
+    """Loads tickers and proxies mapping from correlations.json.
+
+    Expected correlations.json format:
+      {
+        "tickers": ["SGOL", ...],
+        "proxies": {"BITW": "BITO"}
+      }
 
     Returns:
-      (active_tickers_map, end_date_formatted, raw_date_key)
+      tickers_map: dict[str, str | None] mapping ticker -> proxy (or None)
     """
-    with open(snapshot_path, "r", encoding="utf-8") as f:
+    with open(correlations_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    raw_date_key = None
-    positions = None
+    if not isinstance(data, dict):
+        raise ValueError(f"Invalid correlations.json format in {correlations_path}, expected a JSON object.")
 
-    if "positions" in data and isinstance(data["positions"], dict):
-        positions = data["positions"]
-        raw_date_key = data.get("date")
-    else:
-        for k, v in data.items():
-            if isinstance(v, dict):
-                raw_date_key = k
-                positions = v
-                break
+    raw_tickers = data.get("tickers")
+    if not isinstance(raw_tickers, list) or not raw_tickers:
+        raise ValueError(f"No tickers found in correlations file: {correlations_path}")
 
-    if positions is None:
-        raise ValueError(f"Could not find positions data in snapshot file: {snapshot_path}")
+    raw_proxies = data.get("proxies", {})
+    if not isinstance(raw_proxies, dict):
+        raise ValueError(f"Expected 'proxies' to be a dict in {correlations_path}")
 
-    end_date = None
-    if raw_date_key:
-        raw_str = str(raw_date_key).strip()
-        dt = None
-        for fmt in ("%Y%m%d", "%Y-%m-%d", "%Y/%m/%d", "%d-%b-%Y"):
-            try:
-                dt = datetime.strptime(raw_str, fmt)
-                break
-            except ValueError:
-                pass
-        if dt:
-            if dt.weekday() >= 5:
-                dt = dt - timedelta(days=dt.weekday() - 4)
-            end_date = dt.strftime("%d-%b-%Y")
+    proxies_map: dict[str, str] = {}
+    for k, v in raw_proxies.items():
+        if v is not None:
+            v_str = str(v).strip().upper()
+            if v_str:
+                proxies_map[str(k).strip().upper()] = v_str
 
-    active_tickers: dict[str, str | None] = {}
-    skipped_tickers: list[str] = []
+    tickers_map: dict[str, str | None] = {}
+    for item in raw_tickers:
+        ticker = str(item).strip().upper()
+        if ticker:
+            tickers_map[ticker] = proxies_map.get(ticker)
 
-    for ticker, info in positions.items():
-        ticker_upper = str(ticker).strip().upper()
-        if isinstance(info, dict):
-            if "proxy" in info and info["proxy"] is None:
-                skipped_tickers.append(ticker_upper)
-                continue
-            proxy_val = info.get("proxy")
-            if proxy_val is not None:
-                proxy_str = str(proxy_val).strip().upper()
-                if proxy_str in ("NULL", "NONE", "FALSE", ""):
-                    skipped_tickers.append(ticker_upper)
-                    continue
-                active_tickers[ticker_upper] = proxy_str
-            else:
-                active_tickers[ticker_upper] = None
-        elif info is None:
-            skipped_tickers.append(ticker_upper)
-        else:
-            active_tickers[ticker_upper] = None
+    if not tickers_map:
+        raise ValueError(f"No valid tickers found in {correlations_path}")
 
-    if skipped_tickers:
-        print(f"Skipping tickers with null proxy: {', '.join(skipped_tickers)}")
-
-    if not active_tickers:
-        raise ValueError(f"No active tickers found in {snapshot_path}")
-
-    return active_tickers, end_date, str(raw_date_key) if raw_date_key else None
+    return tickers_map
 
 
 def download_chart(
@@ -313,13 +271,13 @@ def main() -> None:
         description="Download correlation charts from etfreplay.com using hermetic Playwright."
     )
     parser.add_argument(
-        "snapshot_path",
-        help="Path to snapshot.json (e.g. '//src/blog/2026/08/dragon/snapshot.json' or 'src/blog/2026/08/dragon/snapshot.json')",
+        "correlations_path",
+        help="Path to correlations.json starting with '//' from repo root (e.g. '//src/blog/2026/08/dragon/correlations.json')",
     )
     parser.add_argument(
         "--output-dir",
         default=None,
-        help="Custom output directory for saved chart images (default: <snapshot_dir>/correlations)",
+        help="Custom output directory for saved chart images (default: <correlations_dir>/correlations)",
     )
     parser.add_argument(
         "--lookback",
@@ -334,7 +292,7 @@ def main() -> None:
     parser.add_argument(
         "--end-date",
         default=None,
-        help="End date (default: from snapshot date or current date)",
+        help="End date (default: latest weekday)",
     )
     parser.add_argument(
         "--force",
@@ -350,20 +308,19 @@ def main() -> None:
     args = parser.parse_args()
     ws_root = get_workspace_root()
 
-    snapshot_file, default_output_dir = resolve_snapshot_file(args.snapshot_path, ws_root)
-    print(f"Loaded snapshot: {snapshot_file}")
-    tickers_map, snapshot_end_date, raw_date_key = load_snapshot(snapshot_file)
+    correlations_file, default_output_dir = resolve_correlations_file(args.correlations_path, ws_root)
+    print(f"Loaded correlations file: {correlations_file}")
+    tickers_map = load_correlations(correlations_file)
     print(f"Active tickers: {', '.join(f'{k}->{v}' if v else k for k, v in tickers_map.items())}")
 
     out_dir = Path(args.output_dir).resolve() if args.output_dir else default_output_dir
-    end_date = args.end_date or snapshot_end_date
 
     run_correlations(
         tickers_map=tickers_map,
         output_dir=out_dir,
         lookback=args.lookback,
         start_date=args.start_date,
-        end_date=end_date,
+        end_date=args.end_date,
         force=args.force,
         headless=args.headless,
     )

@@ -1,5 +1,5 @@
 load("@pypi//:requirements.bzl", "requirement")
-load("@rules_python//python:defs.bzl", "py_binary", "py_library", "py_test")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -22,31 +22,11 @@ py_library(
 )
 
 py_binary(
-    name = "dragon",
+    name = "correlations",
     srcs = ["correlations.py"],
     main = "correlations.py",
     data = [":chromium_files"],
     deps = [
-        ":helpers",
-        requirement("greenlet"),
-        requirement("playwright"),
-        requirement("pyee"),
-        requirement("typing_extensions"),
-    ],
-)
-
-alias(
-    name = "correlations",
-    actual = ":dragon",
-)
-
-py_test(
-    name = "correlations_test",
-    srcs = ["correlations_test.py"],
-    data = [":chromium_files"],
-    tags = ["local"],
-    deps = [
-        ":dragon",
         ":helpers",
         requirement("greenlet"),
         requirement("playwright"),

@@ -1,0 +1,22 @@
+{
+  "tickers": [
+    "BWX",
+    "CAOS",
+    "CTA",
+    "DBMF",
+    "EMLC",
+    "RSP",
+    "SGOL",
+    "STIP",
+    "TLT",
+    "USDU",
+    "VEA",
+    "VWO",
+    "VXF",
+    "WIP"
+  ],
+  "proxies": {
+    "BCD": "BCI",
+    "BITW": "BITO"
+  }
+}
