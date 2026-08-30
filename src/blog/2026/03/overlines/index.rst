@@ -1,3 +1,6 @@
+:date: 2026-03-24
+:desc: Vim shortcut for reStructuredText underlines and overlines.
+
 ============================================
 Vim shortcut for reStructuredText underlines
 ============================================

@@ -9,6 +9,7 @@ py_library(
         "genindex.html",
         "layout.html",
         "page.html",
+        "post.html",
         "search.html",
         "static/theme.css",
     ],

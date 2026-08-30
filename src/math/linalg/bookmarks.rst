@@ -1,3 +1,5 @@
+:desc: Linear algebra bookmarks.
+
 =========
 Bookmarks
 =========

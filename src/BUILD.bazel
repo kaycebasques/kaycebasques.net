@@ -21,6 +21,8 @@ sphinx_build_binary(
         "//extensions/dragon",
         "//extensions/sitemap",
         "//extensions/cp",
+        "//extensions/posts",
+        "//extensions/metadata2",
         "@pypi//sphinx",
     ],
     visibility = ["//visibility:public"],

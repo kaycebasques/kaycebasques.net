@@ -1,4 +1,5 @@
-:date: 20260729
+:date: 2026-07-29
+:desc: Excerpt from The Vital Question by Nick Lane on evolutionary limits and Henry Ford.
 
 ================================
 Henry Ford visits the scrap heap

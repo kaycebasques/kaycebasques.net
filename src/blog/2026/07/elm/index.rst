@@ -1,3 +1,6 @@
+:date: 2026-07-15
+:desc: A proof-of-concept embedding an Elm app within Sphinx built with Bazel.
+
 Hello, Elm!
 ===========
 

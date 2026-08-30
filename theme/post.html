@@ -1,0 +1,7 @@
+{%- extends "layout.html" %}
+{% block body %}
+{% if date %}
+<p id="date">{{ date }}</p>
+{% endif %}
+{{ body }}
+{% endblock %}

@@ -1,3 +1,6 @@
+:date: 2026-04-01
+:desc: Definitions and differences between warp and woof in tapestry.
+
 =============
 Warp and woof
 =============

@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {%- if desc %}
+    <meta name="description" content="{{ desc }}"/>
+    {%- elif meta and meta.desc %}
+    <meta name="description" content="{{ meta.desc }}"/>
+    {%- endif %}
     <title>{{ title }}</title>
     {%- for css in css_files %}
     <link rel="stylesheet" href="{{ pathto(css.filename, 1) }}" type="text/css"/>

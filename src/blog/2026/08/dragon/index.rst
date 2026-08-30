@@ -1,3 +1,6 @@
+:date: 2026-08-20
+:desc: My long-term investment portfolio inspired by the dragon portfolio.
+
 .. _The Allegory Of The Hawk And Serpent: ./artemis.pdf
 
 =================================

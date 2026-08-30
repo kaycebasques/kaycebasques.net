@@ -1,3 +1,6 @@
+:date: 2026-03-23
+:desc: Earth rotated faster in the past.
+
 ================================
 Earth rotated faster in the past
 ================================
