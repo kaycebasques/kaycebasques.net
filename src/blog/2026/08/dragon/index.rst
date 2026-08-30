@@ -1,10 +1,12 @@
+.. _The Allegory Of The Hawk And Serpent: ./artemis.pdf
+
 =================================
 My long-term investment portfolio
 =================================
 
 This is the first of potentially many blog posts about my long-term investment
 portfolio, which I fondly call the dragon portfolio. The name is an allusion to
-The Allegory Of The Hawk And Serpent by Artemis Capital.
+`The Allegory Of The Hawk And Serpent`_ by Artemis Capital.
 
 ----------
 Background
