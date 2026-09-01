@@ -1,9 +1,245 @@
+:desc: Asset class and ticker correlations for the dragon portfolio.
+
 ============
 Correlations
 ============
 
+BCD
+===
+
+BCD vs BITW
+-----------
+
+BCD proxy: BCI
+
+BITW proxy: BITO
+
+.. image:: BCD-BITW.png
+
+BCD vs BWX
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-BWX.png
+
+BCD vs CAOS
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-CAOS.png
+
+BCD vs CTA
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-CTA.png
+
+BCD vs DBMF
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-DBMF.png
+
+BCD vs EMLC
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-EMLC.png
+
+BCD vs RSP
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-RSP.png
+
+BCD vs SGOL
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-SGOL.png
+
+BCD vs STIP
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-STIP.png
+
+BCD vs TLT
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-TLT.png
+
+BCD vs USDU
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-USDU.png
+
+BCD vs VEA
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-VEA.png
+
+BCD vs VWO
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-VWO.png
+
+BCD vs VXF
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-VXF.png
+
+BCD vs WIP
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-WIP.png
+
+BITW
+====
+
+BITW vs BCD
+-----------
+
+BITW proxy: BITO
+
+BCD proxy: BCI
+
+.. image:: BCD-BITW.png
+
+BITW vs BWX
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-BWX.png
+
+BITW vs CAOS
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-CAOS.png
+
+BITW vs CTA
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-CTA.png
+
+BITW vs DBMF
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-DBMF.png
+
+BITW vs EMLC
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-EMLC.png
+
+BITW vs RSP
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-RSP.png
+
+BITW vs SGOL
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-SGOL.png
+
+BITW vs STIP
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-STIP.png
+
+BITW vs TLT
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-TLT.png
+
+BITW vs USDU
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-USDU.png
+
+BITW vs VEA
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-VEA.png
+
+BITW vs VWO
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-VWO.png
+
+BITW vs VXF
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-VXF.png
+
+BITW vs WIP
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-WIP.png
+
 BWX
 ===
+
+BWX vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-BWX.png
+
+BWX vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-BWX.png
 
 BWX vs CAOS
 -----------
@@ -73,6 +309,20 @@ BWX vs WIP
 CAOS
 ====
 
+CAOS vs BCD
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-CAOS.png
+
+CAOS vs BITW
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-CAOS.png
+
 CAOS vs BWX
 -----------
 
@@ -140,6 +390,20 @@ CAOS vs WIP
 
 CTA
 ===
+
+CTA vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-CTA.png
+
+CTA vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-CTA.png
 
 CTA vs BWX
 ----------
@@ -209,6 +473,20 @@ CTA vs WIP
 DBMF
 ====
 
+DBMF vs BCD
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-DBMF.png
+
+DBMF vs BITW
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-DBMF.png
+
 DBMF vs BWX
 -----------
 
@@ -276,6 +554,20 @@ DBMF vs WIP
 
 EMLC
 ====
+
+EMLC vs BCD
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-EMLC.png
+
+EMLC vs BITW
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-EMLC.png
 
 EMLC vs BWX
 -----------
@@ -345,6 +637,20 @@ EMLC vs WIP
 RSP
 ===
 
+RSP vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-RSP.png
+
+RSP vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-RSP.png
+
 RSP vs BWX
 ----------
 
@@ -412,6 +718,20 @@ RSP vs WIP
 
 SGOL
 ====
+
+SGOL vs BCD
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-SGOL.png
+
+SGOL vs BITW
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-SGOL.png
 
 SGOL vs BWX
 -----------
@@ -481,6 +801,20 @@ SGOL vs WIP
 STIP
 ====
 
+STIP vs BCD
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-STIP.png
+
+STIP vs BITW
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-STIP.png
+
 STIP vs BWX
 -----------
 
@@ -548,6 +882,20 @@ STIP vs WIP
 
 TLT
 ===
+
+TLT vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-TLT.png
+
+TLT vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-TLT.png
 
 TLT vs BWX
 ----------
@@ -617,6 +965,20 @@ TLT vs WIP
 USDU
 ====
 
+USDU vs BCD
+-----------
+
+BCD proxy: BCI
+
+.. image:: BCD-USDU.png
+
+USDU vs BITW
+------------
+
+BITW proxy: BITO
+
+.. image:: BITW-USDU.png
+
 USDU vs BWX
 -----------
 
@@ -684,6 +1046,20 @@ USDU vs WIP
 
 VEA
 ===
+
+VEA vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-VEA.png
+
+VEA vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-VEA.png
 
 VEA vs BWX
 ----------
@@ -753,6 +1129,20 @@ VEA vs WIP
 VWO
 ===
 
+VWO vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-VWO.png
+
+VWO vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-VWO.png
+
 VWO vs BWX
 ----------
 
@@ -821,6 +1211,20 @@ VWO vs WIP
 VXF
 ===
 
+VXF vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-VXF.png
+
+VXF vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-VXF.png
+
 VXF vs BWX
 ----------
 
@@ -888,6 +1292,20 @@ VXF vs WIP
 
 WIP
 ===
+
+WIP vs BCD
+----------
+
+BCD proxy: BCI
+
+.. image:: BCD-WIP.png
+
+WIP vs BITW
+-----------
+
+BITW proxy: BITO
+
+.. image:: BITW-WIP.png
 
 WIP vs BWX
 ----------

@@ -1,15 +1,14 @@
-:desc: Personal website of Kayce Basques.
+:desc: Notes, blog posts, and technical articles by Kayce Basques.
 
 ====
 Home
 ====
-
-Hello, world?
-
-.. posts::
 
 .. toctree::
    :hidden:
 
    blog/index
    math/index
+
+.. posts::
+

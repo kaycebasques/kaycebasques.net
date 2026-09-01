@@ -4,8 +4,6 @@
 Blog
 ====
 
-.. posts::
-
 .. toctree::
    :hidden:
 
@@ -16,3 +14,6 @@ Blog
    2026/07/elm/index
    2026/07/heap/index
    2026/08/dragon/index
+
+.. posts::
+
