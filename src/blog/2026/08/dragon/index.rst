@@ -48,25 +48,19 @@ form of humor.
 I assume, however, that I will be fortunate enough to let these investments
 ride for many years.  I am currently 37 years old. If all goes well then I
 won't need to take distributions from my retirement accounts for at least 33
-years.
+years. In that case I need to position the portfolio to weather different
+macroeconomic regimes. In my adult years I've already seen 2: the ZIRP
+years and our current "higher for longer" situation.
 
 I am fine with rebalancing the accounts once or twice a year, but I don't have the
 time or energy to babysit them more than that.
 
-Intellectually, diversification seems at odds with my main goal of preserving
-purchasing power. But the reality is that I sleep a lot better when my
-savings are extremely diversified. For example, I have pondered a lot whether I
-would be better off just leaving all of my savings in TIPS. It's a much more
-straightforward way to maintain purchasing power. But that would mean that all
-of my money is tied up in the dysfunctional US federal government.  I would
-subconsciously start paying more attention to news about all of the ways that
-the federal government is broken, because I would have so much skin in the
-game.
-
-So I'm prepared to underperform the S&P 500. But I do actually believe there's a
-chance that diversification helps me outperform over the long run. Macroeconomic
-regimes are real. The ZIRP years were clearly very different than our current
-systemic inflation situation.
+My hunch is that diversification is at odds with my main goal of preserving
+purchasing power but the reality is that I sleep a lot better when my savings
+are extremely diversified. For example, leaving all of my savings in TIPS might
+be a much more straightforward way of maintaining purchasing power. But then
+all of my savings would be intertwined with the actions of the US federal
+government.
 
 ------
 Thesis
