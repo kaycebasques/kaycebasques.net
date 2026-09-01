@@ -4,8 +4,7 @@ py_library(
     name = "dragon",
     srcs = ["dragon.py"],
     data = [
-        "snapshots.json",
-        "tickers.json",
+        "metadata.json",
     ],
     imports = ["."],
     visibility = ["//visibility:public"],

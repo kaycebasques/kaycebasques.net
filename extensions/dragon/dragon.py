@@ -3,6 +3,7 @@ from pathlib import Path
 from docutils import nodes
 from docutils.parsers.rst import Directive
 from sphinx.application import Sphinx
+from sphinx.util.docutils import SphinxDirective
 
 
 def format_asset_class(ac: str | None) -> str:
@@ -31,33 +32,78 @@ def format_asset_class(ac: str | None) -> str:
     return ac.replace("_", " ").title()
 
 
-def load_data(directive: Directive) -> tuple[dict, dict, int] | nodes.Node:
-    date = directive.arguments[0].strip()
-    snapshots_path = Path(__file__).parent / "snapshots.json"
+def load_data(directive: Directive) -> tuple[dict, dict, int, str] | nodes.Node:
+    date = directive.arguments[0].strip() if directive.arguments else ""
+
+    source = None
+    if hasattr(directive, "get_source_info"):
+        source, _ = directive.get_source_info()
+    if not source and hasattr(directive, "state_machine"):
+        source, _ = directive.state_machine.get_source_and_line(directive.lineno)
+    if not source and hasattr(directive, "state") and hasattr(directive.state, "document"):
+        source = directive.state.document.get("source", "")
+
+    if not source:
+        return directive.state_machine.reporter.error(
+            "Could not determine source document path",
+            line=directive.lineno,
+        )
+
+    snapshot_path = Path(source).parent / "snapshot.json"
 
     try:
-        with open(snapshots_path, "r", encoding="utf-8") as f:
+        with open(snapshot_path, "r", encoding="utf-8") as f:
             snapshots = json.load(f)
     except Exception as e:
         return directive.state_machine.reporter.error(
-            f"Failed to read snapshots.json: {e}",
+            f"Failed to read snapshot.json: {e}",
             line=directive.lineno,
         )
 
-    if date not in snapshots:
-        return directive.state_machine.reporter.error(
-            f"Snapshot not found for date: {date}",
-            line=directive.lineno,
-        )
+    if date:
+        if date in snapshots:
+            raw_data = snapshots[date]
+        elif date.replace("-", "") in snapshots:
+            raw_data = snapshots[date.replace("-", "")]
+        elif "positions" in snapshots:
+            raw_data = snapshots["positions"]
+        else:
+            return directive.state_machine.reporter.error(
+                f"Snapshot not found for date: {date}",
+                line=directive.lineno,
+            )
+    else:
+        if "positions" in snapshots:
+            raw_data = snapshots["positions"]
+            date = str(snapshots.get("date", ""))
+        elif len(snapshots) == 1:
+            date = list(snapshots.keys())[0]
+            raw_data = snapshots[date]
+        else:
+            return directive.state_machine.reporter.error(
+                "No date argument provided and snapshot.json does not contain a single snapshot entry or positions",
+                line=directive.lineno,
+            )
 
-    data = snapshots[date]
+    data = {}
+    for ticker, val in raw_data.items():
+        if isinstance(val, dict):
+            data[ticker] = val.get("value", 0)
+        elif isinstance(val, (int, float)):
+            data[ticker] = int(val)
+        else:
+            try:
+                data[ticker] = int(val)
+            except (ValueError, TypeError):
+                data[ticker] = 0
+
     total = sum(data.values())
 
-    tickers_path = Path(__file__).parent / "tickers.json"
+    metadata_path = Path(__file__).parent / "metadata.json"
     tickers_meta = {}
-    if tickers_path.exists():
+    if metadata_path.exists():
         try:
-            with open(tickers_path, "r", encoding="utf-8") as f:
+            with open(metadata_path, "r", encoding="utf-8") as f:
                 tickers_meta = json.load(f)
         except Exception:
             pass
@@ -138,10 +184,10 @@ def build_snapshot_table(data: dict, tickers_meta: dict, total: int, date: str) 
     return table
 
 
-class SnapshotDirective(Directive):
+class SnapshotDirective(SphinxDirective):
     has_content = False
-    required_arguments = 1
-    optional_arguments = 0
+    required_arguments = 0
+    optional_arguments = 1
     final_argument_whitespace = False
 
     def run(self) -> list[nodes.Node]:

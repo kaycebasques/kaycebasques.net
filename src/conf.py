@@ -10,14 +10,8 @@ extensions = [
     "theme",
     "dragon",
     "sitemap",
-    "cp",
     "posts",
     "metadata2",
-]
-
-# Copy
-cp = [
-    "pdf",
 ]
 
 # Posts

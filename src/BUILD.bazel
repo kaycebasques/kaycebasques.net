@@ -20,7 +20,6 @@ sphinx_build_binary(
         "//theme",
         "//extensions/dragon",
         "//extensions/sitemap",
-        "//extensions/cp",
         "//extensions/posts",
         "//extensions/metadata2",
         "@pypi//sphinx",
