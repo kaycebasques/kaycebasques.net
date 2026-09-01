@@ -25,7 +25,7 @@ def get_workspace_root() -> Path:
 
 
 def resolve_correlations_file(target: str, workspace_root: Path | None = None) -> tuple[Path, Path]:
-    """Resolves correlations file path argument to (correlations_file, output_correlations_dir).
+    """Resolves correlations file path argument to (correlations_file, output_dir).
 
     Requires path format starting with '//' representing the repository root, e.g.:
       '//src/blog/2026/08/dragon/correlations.json'
@@ -44,7 +44,7 @@ def resolve_correlations_file(target: str, workspace_root: Path | None = None) -
     if not correlations_file.is_file():
         raise FileNotFoundError(f"Correlations file not found: {correlations_file}")
 
-    return correlations_file, correlations_file.parent / "correlations"
+    return correlations_file, correlations_file.parent
 
 
 def load_correlations(correlations_path: Path) -> dict[str, str | None]:
@@ -164,7 +164,7 @@ def generate_rst_index(
     output_dir: Path,
     tickers_map: dict[str, str | None],
 ) -> Path:
-    """Generates correlations/index.rst displaying all correlation charts."""
+    """Generates index.rst displaying all correlation charts."""
     tickers = list(tickers_map.keys())
     lines: list[str] = []
 
@@ -277,7 +277,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         default=None,
-        help="Custom output directory for saved chart images (default: <correlations_dir>/correlations)",
+        help="Custom output directory for saved chart images (default: same directory as correlations file)",
     )
     parser.add_argument(
         "--lookback",
