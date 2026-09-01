@@ -1,13 +1,13 @@
 {
   "20260820": {
-    "BCD": {"value": 4906, "proxy": "BCI"},
-    "BITW": {"value": 2445, "proxy": "BITO"},
+    "BCD": {"value": 4906},
+    "BITW": {"value": 2445},
     "BWX": {"value": 4905},
     "CAOS": {"value": 7359},
     "CTA": {"value": 2450},
     "DBMF": {"value": 2453},
     "EMLC": {"value": 5724},
-    "IMF": {"value": 2455, "proxy": null},
+    "IMF": {"value": 2455},
     "RSP": {"value": 3272},
     "SGOL": {"value": 7361},
     "STIP": {"value": 2453},
