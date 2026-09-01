@@ -1,19 +1,36 @@
 :date: 2026-08-20
-:desc: My long-term investment portfolio inspired by the dragon portfolio.
+:desc: Introduction to my long-term investment portfolio.
 
 .. _The Allegory Of The Hawk And Serpent: ./artemis.pdf
 
-=================================
-My long-term investment portfolio
-=================================
+=====================================
+Dragon portfolio update #1 (Aug 2026)
+=====================================
 
 This is the first of potentially many blog posts about my long-term investment
-portfolio, which I fondly call the dragon portfolio. The name is an allusion to
-`The Allegory Of The Hawk And Serpent`_ by Artemis Capital.
+portfolio, which I call the dragon portfolio. The name is an homage to `The
+Allegory Of The Hawk And Serpent`_ by Artemis Capital.
+
+This first post will be longer than subsequent updates because I'm going to
+explain my goals, thesis, etc.
 
 ----------
-Background
+Disclaimer
 ----------
+
+This is not investment advice. These posts are primarily a long-term record for
+myself, and a way to get feedback on my ideas. I am an amateur investor. The
+information that I provide may be wrong. My investment thesis may be wildly
+incorrect and end up losing a lot of money. Do your own due diligence! I am not
+responsible for your financial decisions.
+
+-----
+Goals
+-----
+
+------
+Thesis
+------
 
 .. The SERPENT represents a period of secular growth fueled by the virtuous cycle
 .. of value creation and rising asset prices… The HAWK signifies the forces of
